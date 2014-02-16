@@ -1,6 +1,6 @@
 <?php
 /**
- * Resolve creating needed statuses
+ * Resolve creating needed settings
  *
  * @package cybershop
  * @subpackage build
