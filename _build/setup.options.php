@@ -1,7 +1,9 @@
 <?php
+
 /**
  * Build the setup options form.
  */
+ 
 $exists = false;
 $output = null;
 switch ($options[xPDOTransport::PACKAGE_ACTION]) {
