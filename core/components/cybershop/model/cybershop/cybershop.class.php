@@ -251,7 +251,7 @@ class Cybershop {
                 if (empty($uri)) {
                     $uri = $idElement;
                 }
-                $url = $resourceUrl . $uri;
+                $url = $resourceUrl . $uri . 'html';
             } else if (($typeElement == 'csCategory') || ($typeElement == 'csBrand')) {
                 $resourceUrl = $this->modx->makeUrl($idResource);
                 $parent_id = $idElement;
@@ -300,6 +300,7 @@ class Cybershop {
         if ($this->modx->config['friendly_urls'] == 1) {
             $alias_array = explode('/', $alias);
             $alias_array[0] = str_replace('/', '', $alias_array[0]);
+            $alias_array[0] = str_replace('.html', '', $alias_array[0]);
             $c = $this->modx->newQuery($typeElement, array('alias' => $alias_array[0]));
             $c->select('id');
             if ($c->prepare() && $c->stmt->execute()) {
