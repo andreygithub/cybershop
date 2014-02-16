@@ -1,6 +1,6 @@
 <tr id="[[+key]]">
 <td class="image"><a href="[[+link]]">
-<img src="[[phpthumbof? &input=`[[+image]]` &options=`h=100`]]" alt="" />
+<img src="[[phpthumbof? &input=`[[++site_url]][[+image]]` &options=`h=100`]]" alt="" />
 </a></td>
 <td class="title"><a href="[[+link]]">[[+name]]</a></td>
 <td class="size">[[+complectname]]</td>

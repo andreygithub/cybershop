@@ -31,6 +31,7 @@ $xpdo_meta_map['csCatalog']= array (
     'value2' => 0,
     'value3' => 0,
     'alias' => '',
+    'uri' => NULL,
     'createdby' => 0,
     'createdon' => '0000-00-00 00:00:00',
     'editedby' => 0,
@@ -253,6 +254,13 @@ $xpdo_meta_map['csCatalog']= array (
       'phptype' => 'string',
       'null' => true,
       'default' => '',
+      'index' => 'index',
+    ),
+    'uri' => 
+    array (
+      'dbtype' => 'text',
+      'phptype' => 'string',
+      'null' => true,
       'index' => 'index',
     ),
     'createdby' => 
@@ -547,6 +555,22 @@ $xpdo_meta_map['csCatalog']= array (
         'alias' => 
         array (
           'length' => '',
+          'collation' => 'A',
+          'null' => true,
+        ),
+      ),
+    ),
+    'uri' => 
+    array (
+      'alias' => 'uri',
+      'primary' => false,
+      'unique' => false,
+      'type' => 'BTREE',
+      'columns' => 
+      array (
+        'uri' => 
+        array (
+          'length' => '333',
           'collation' => 'A',
           'null' => true,
         ),

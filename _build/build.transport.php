@@ -244,7 +244,7 @@ $vehicle->resolve('file',array(
 ));
 $vehicle->resolve('file',array(
 	'source' => $sources['source_upload'],
-	'target' => "return MODX_BASE_PATH . 'upload/';",
+	'target' => "return MODX_BASE_PATH ;",
 ));
 
 $resolvers = array('tables','policy','sources','settings','setup','catalog');

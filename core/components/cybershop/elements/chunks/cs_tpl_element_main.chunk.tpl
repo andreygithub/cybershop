@@ -2,7 +2,7 @@
     <h1>[[+name]]</h1>
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-6">
-            <a class="fancybox" href="[[+image]]"><img src="[[phpthumbof? &input=`[[+image]]` &options=`h=600`]]" alt="no image" class="img-thumbnail"></a>
+            <a class="fancybox" href="[[+image]]"><img src="[[phpthumbof? &input=`[[++site_url]][[+image]]` &options=`h=600`]]" alt="no image" class="img-thumbnail"></a>
             [[+images]]
         </div>
         <div class="col-xs-6 col-sm-6 col-md-3">
