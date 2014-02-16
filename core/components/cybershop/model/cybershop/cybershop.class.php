@@ -251,7 +251,7 @@ class Cybershop {
                 if (empty($uri)) {
                     $uri = $idElement;
                 }
-                $url = $resourceUrl . $uri . 'html';
+                $url = $resourceUrl . $uri . '.html';
             } else if (($typeElement == 'csCategory') || ($typeElement == 'csBrand')) {
                 $resourceUrl = $this->modx->makeUrl($idResource);
                 $parent_id = $idElement;
