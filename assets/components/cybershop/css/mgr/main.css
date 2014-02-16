@@ -1,0 +1,7 @@
+.grid-row-deleted {
+    color: red;
+    text-decoration:line-through;
+}
+.x-color-palette {width:80%;height:auto;cursor:pointer}
+
+

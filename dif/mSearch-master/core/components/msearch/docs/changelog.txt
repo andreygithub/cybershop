@@ -1,0 +1,71 @@
+Changelog for mSearch.
+
+1.5.1 (25.05.2013)
+=============
+- Fixed sorting of query
+- Improved chunk mFilter
+- Added parameter "paginator" for specify snippet for pagination
+- Added support of boolean product fields
+- Added support of json product fields
+
+1.5.0 (24.05.2013)
+=============
+- Adapted for miniShop2. Not supports miniShop1.
+
+1.4.2 (11.11.2012)
+=============
+- Additional filters for parameters (&includeMSList=`price,add3:snippet`)
+- Improved query sanitization
+- Various fixed and improvements
+
+=============
+- Various bugfixes
+- Added parameter sortFilters, for sorting order of filters on web page.
+
+1.4.0 (05.06.2012)
+=============
+- Added caching of search results (refreshes on site refresh).
+- Added parameter &disablePhpMorphy - if you do not need morphological search.
+- Heavy refactor
+- Added powerful snippet mFilter for filtering results by TVs and/or miniShop goods properties.
+	- Added filter.js in assets for jquery example how to work with mFilter.
+	- Added default chunks for mFilter
+- Added autocomplete.js in assets for jquery example how to work with mSearch autocomplete.
+
+1.3.0 (23.05.2012)
+=============
+- Added setup options for download dictionary
+- Added properties to snippet
+- Added parameter indexFields. Now you can specify fields of resources for indexing.
+- Added parameter where for additional filtering resources.
+- Added support for jqueryui autocomplete
+
+1.2.0 (04.05.2012)
+=============
+- Fixed indexing resources by plugin.
+- Added &queryVar=`` for changing key in $_GET array
+- Added context for filtering by parents
+- Added parameter &parentsVar=`` for specify filtering by parents via $_GET[] param
+- Fixed &includeMS processing
+
+1.1.1 (24.04.2012)
+==============
+- [#1] Fixed E_NOTICE errors
+- [#1] Fixed error with no results, when limit = 0
+
+1.1.0 (10.04.2012)
+==============
+- Parameter &includeMS for miniShop support (you may use goods properties in search result chunks).
+
+1.0.2 (10.04.2012)
+==============
+- Improved indexer
+
+1.0.1 (04.04.2012)
+==============
+- Bugfixes
+- TVs support
+
+1.0.0 (02.04.2012)
+==============
+- Initial release.

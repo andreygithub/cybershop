@@ -1,0 +1,37 @@
+Changelog for mSearch2.
+
+0.5.1 beta1
+==============
+- Added msFiltersHandler::getMsOptionValues() method. You can use &filters=`msoption|size,msoption|color` now.
+- Added update of main filter log on ajax requests, if enabled.
+- Added parameter "disableSuggestions" for very fast filtration. if enabled, you will see small numbers next to the filter parameters.
+
+0.5.0 beta2
+==============
+- Added snippet mFilter2
+- Added default javascript
+- Added default css
+
+0.4.0 beta
+==============
+- Improved search algorithm. Added %LIKE% search for words, that was not found in index.
+- Improved highlight of search results for %LIKE% results.
+
+0.3.0 beta1
+==============
+- Fixed snippet offset bug
+
+0.3.0 beta
+==============
+- Improved search algorithm
+- Improved highlight of search results
+- Improved search snippet
+
+0.2.0
+==============
+- Added manager pages
+- Added indexing plugin
+
+0.1.0
+==============
+- Initial release with relevant morphological search.

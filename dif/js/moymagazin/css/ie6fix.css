@@ -1,0 +1,30 @@
+
+.main-cont {width:expression(
+(document.documentElement.offsetWidth) > 1280 
+?  "1280px" 
+: ((document.documentElement.offsetWidth) < 970 ? "970px" : "auto")); }
+
+.ie6hide {display: none;}
+
+.hdr-img-b {background: url(../img/hdr_c.gif) left top no-repeat;}
+.ad-bn {margin-right:10px;}
+.login-box {background: url(../img/hdr_d.gif) no-repeat; right:-1px;}
+
+
+.logo {margin-left:2%;}
+.logo a {position: relative;}
+
+/*
+.login-box .textfield {background-attachment: fixed; position: relative;}
+.login-box .button {position: relative;}
+*/
+
+.left-menu li {height:10px;}
+.side-block-body {height:100px;}
+.center-col .padding {height:450px;}
+.product-img img {background: url(../img/frame.gif) no-repeat;}
+.product {width:388px;}
+
+.hr-shs-buts button {padding:0 0 0 100px; text-indent:0;}
+
+.tip-bubble {background: none; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/assets/templates/blu-ray/img/bubble1.png',sizingMethod='crop');}

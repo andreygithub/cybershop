@@ -1,0 +1,239 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Lesson 1</title>
+        <link rel="stylesheet" href="ext3/resources/css/ext-all.css">
+        <script src="ext3/adapter/ext/ext-base.js"></script>
+        <script src="ext3/ext-all.js"></script>
+        <script> 
+  
+        function showWindow()
+        {
+
+                if(!win){
+                        var win = new Ext.Window({
+                                width:500,
+                                height:300,
+                                title: 'Наше пробное окошко',
+     //                           html:'<h1>Тут размещается код HTML</h2>',
+  //                              layout:'fit',
+                                layout:'column', // arrange items in columns
+                                defaults: {      // defaults applied to items
+                                    layout: 'form',
+                                    border: false,
+                                    bodyStyle: 'padding:4px'
+                                },
+
+     //                           bodyStyle:{'background-color': '#FFFFFF'},
+                                items: [{
+                                            // Fieldset in Column 1
+                                            xtype:'fieldset',
+                                            columnWidth: 0.5,
+                                            title: 'Fieldset 1',
+                                            collapsible: true,
+                                            autoHeight:true,
+                                            defaults: {
+                                                anchor: '-20' // leave room for error icon
+                                            },
+                                            defaultType: 'textfield',
+                                            items :[{
+                                                    fieldLabel: 'Field 1'
+                                                }, {
+                                                    fieldLabel: 'Field 2'
+                                                }, {
+                                                    fieldLabel: 'Field 3'
+                                                }
+                                            ]
+                                        },{
+                                            // Fieldset in Column 2 - Panel inside
+                                            xtype:'fieldset',
+                                            title: 'Show Panel', // title, header, or checkboxToggle creates fieldset header
+                                            autoHeight:true,
+                                            columnWidth: 0.5,
+                                            checkboxToggle: true,
+                                            collapsed: true, // fieldset initially collapsed
+                                            layout:'anchor',
+                                            items :[{
+                                                xtype: 'panel',
+                                                anchor: '100%',
+                                                title: 'Panel inside a fieldset',
+                                                frame: true,
+                                                height: 100
+                                            }]
+                                        }]
+                        })      
+
+                }
+                win.show();
+          }
+          
+          function showForm()
+          {
+          var form = new Ext.FormPanel({
+                title: 'Simple Form with FieldSets',
+                labelWidth: 75, // label settings here cascade unless overridden
+                url: 'save-form.php',
+                frame:true,
+                bodyStyle:'padding:5px 5px 0',
+                width: 700,
+                renderTo: document.body,
+                layout:'column', // arrange items in columns
+                defaults: {      // defaults applied to items
+                    layout: 'form',
+                    border: false,
+                    bodyStyle: 'padding:4px'
+                },
+                items: [{
+                    // Fieldset in Column 1
+                    xtype:'fieldset',
+                    columnWidth: 0.5,
+                    title: 'Fieldset 1',
+                    collapsible: true,
+                    autoHeight:true,
+                    defaults: {
+                        anchor: '-20' // leave room for error icon
+                    },
+                    defaultType: 'textfield',
+                    items :[{
+                            fieldLabel: 'Field 1'
+                        }, {
+                            fieldLabel: 'Field 2'
+                        }, {
+                            fieldLabel: 'Field 3'
+                        }
+                    ]
+                },{
+                    // Fieldset in Column 2 - Panel inside
+                    xtype:'fieldset',
+                    title: 'Show Panel', // title, header, or checkboxToggle creates fieldset header
+                    autoHeight:true,
+                    columnWidth: 0.5,
+                    checkboxToggle: true,
+                    collapsed: true, // fieldset initially collapsed
+                    layout:'anchor',
+                    items :[{
+                        xtype: 'panel',
+                        anchor: '100%',
+                        title: 'Panel inside a fieldset',
+                        frame: true,
+                        height: 100
+                    }]
+                }]
+            });
+            form.show();
+          }
+showFormAnchorLayout = function()
+{
+    
+Ext.util.Format.comboRenderer = function(combo){
+    return function(value){
+        var record = combo.findRecord(combo.valueField, value);
+        return record ? record.get(combo.displayField) : combo.valueNotFoundText;
+         }
+}
+
+var combo = new Ext.form.ComboBox({
+    typeAhead: true,
+    triggerAction: 'all',
+    lazyRender:true,
+    mode: 'local',
+    store: [
+    [1, 'Fred Flintstone', 'Fred'],  // note that id for the record is the first element
+    [2, 'Barney Rubble', 'Barney']
+],
+    valueField: 'myId',
+    displayField: 'displayText'
+});    
+
+
+Ext.onReady(function() {
+    var form = new Ext.form.FormPanel({
+        
+        baseCls: 'x-plain',
+        labelWidth: 70,
+        url:'save-form.php',
+        defaultType: 'textfield',
+
+        items: [
+        {
+            xtype: 'timefield',
+            fieldLabel: 'timefield',
+            name: 'to',
+            anchor:'100%'  // anchor width by percentage
+        },{
+            xtype: 'textfield',
+            fieldLabel: 'textfield',
+            name: 'subject',
+            anchor: '100%'  // anchor width by percentage
+        },{
+            xtype: 'numberfield',
+            fieldLabel: 'NumberField',
+            name: 'subject',
+            anchor: '100%'  // anchor width by percentage
+        },{
+            xtype: 'datefield',
+            fieldLabel: 'datefield',
+            name: 'subject',
+            anchor: '100%'  // anchor width by percentage
+        },{
+            xtype: 'displayfield',
+            fieldLabel: 'displayfield',
+            name: 'subject',
+            anchor: '100%'  // anchor width by percentage
+        },{
+            fieldLabel: 'ComboBox',
+            xtype: 'combo',
+            store: ['item 1', 'item 2'],
+            itemCls: 'x-form-required',
+            resizable: true
+/*        },{
+            xtype: 'textarea',
+            fieldLabel: 'textarea',
+            hideLabel: false,
+            name: 'msg',
+            anchor: '100% -53' 
+*/        },{
+            hideLabel: true,
+            xtype: 'htmleditor',
+            value: 'Mouse over toolbar for tooltips.<br /><br />The HTMLEditor IFrame requires a refresh between a stylesheet switch to get accurate colors.',
+            height: 110,
+            handler: function(){
+                Ext.get('styleswitcher').on('click', function(e){
+                    Ext.getCmp('form-widgets').getForm().reset();
+                });
+            }
+        }]
+    });
+
+    var window = new Ext.Window({
+        title: 'Resize Me',
+        width: 500,
+        height:300,
+        minWidth: 300,
+        minHeight: 200,
+        layout: 'fit',
+        plain:true,
+        bodyStyle:'padding:5px;',
+        buttonAlign:'center',
+        items: form,
+
+        buttons: [{
+            text: 'Send'
+        },{
+            text: 'Cancel'
+        }]
+    });
+
+    window.show();
+});
+}
+</script>
+
+    </head>
+    <body>
+        <p><input onclick="showWindow();" type="button" value="show Window" /></p>
+        <p><input onclick="showForm();" type="button" value="show form!" /></p>
+        <p><input onclick="showFormAnchorLayout();" type="button" value="show FormAnchorLayout!" /></p>
+    </body>
+</html>

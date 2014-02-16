@@ -1,0 +1,1 @@
+<div id="cybershop-panel-currency-div"></div>

@@ -1,0 +1,429 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	
+	<!--[if lt IE 7]>
+	<link rel="stylesheet" type="text/css" href="css/ie6fix.css">
+	<![endif]-->
+	
+	<script src="js/jquery-1.7.1.min.js" type="text/javascript"></script>
+	<script src="js/fieldFocus.js" type="text/javascript"></script>
+	<script src="js/JQuery.MenuTree.js" type="text/javascript"></script>
+	<script src="js/carousel.js" type="text/javascript"></script>
+	<script src="js/script.js" type="text/javascript"></script>
+
+	<!-- carousel -->
+	<script type="text/javascript">
+	$(document).ready(function(){
+	  var options = {
+	    parent: 'pr-block',
+	    carouselTitle: 'carousel-title',
+	    carouselName: 'carousel-name',
+	    buttons: 'pr-bl-head',
+	    imgsBox: 'carousel-imgs',
+	    descrBox: 'pr-bl-descr',
+	    carouselArrow: 'pr-bl-body-c',
+	    carouselBody: 'pr-bl-body-d'
+	  };
+	  $('ul.carousel-list').carousel(options);
+	});
+	</script>
+	<!-- /carousel -->
+
+</head>
+<body>
+
+<div class="main-cont">
+
+<!-- \\\header\\\ -->
+<div class="header">
+
+<!-- login box -->
+  <div class="relative">
+    <div class="login-box">
+      <div class="login-box-b">
+        <div class="login-box-c">
+      
+<form action="" method="post">
+	<div class="lgb-l">Логин</div>
+	<div class="lgb-r"><input class="textfield" type="text" name="" /></div>
+	<div class="lgb-l">Пароль</div>
+	<div class="lgb-r"><input class="textfield" type="text" name="" /></div>
+	<br class="clear none" />
+	<div class="marg-tb">
+	  <input class="button" type="image" src="img/login_but.gif" alt="Войти" />
+	  <!--input type="checkbox" name="" id="remember" />
+	  <label for="remember">запомнить меня</label-->
+	  <a href="#" class="loginza" title="Войти через OpenID">
+		<img src="img/sign_in_button.gif" width="77" height="20" alt="Войти через OpenID" /><br />
+	  </a>
+	</div>
+</form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- /login box -->
+
+  <div class="hdr-top">
+    <ul>
+      <li><span>На главную</span></li>
+      <li><a href="#">Карта сайта</a></li>
+    </ul>
+  </div>
+  
+  <div class="hdr-top-b">
+    <ul>
+      <li><big><a href="#">Регистрация</a></big></li>
+      <li><a href="#" class="js-link">напомнить пароль</a></li>
+    </ul>
+    
+    <div class="search">
+      <form action="" method="post">
+        <input class="button" type="image" src="img/search_button.gif" alt="Искать" title="Искать" />
+	<input type="text" onfocus="if(this.value=='Поиск')this.value=''" value="Поиск" name="search" class="textfield" />
+      </form>
+    </div>
+    
+  </div>
+  
+  <div class="hdr-img">
+    <div class="hdr-img-b">
+      <div class="logo">
+        <a href="/"><img src="img/shk_logo.png" alt="" height="75" width="265" /></a>
+      </div>
+      <div class="ad-bn">
+        <a href="#"><img src="img/468x60.gif" alt="" height="60" width="468" /></a>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- ///header/// -->
+
+<!-- main menu -->
+<ul class="main-menu">
+  <li class="active"><span><span>Главная</span></span></li>
+  <li><a href="catalog.html"><span>Каталог</span></a></li>
+  <li><a href="#"><span>Поиск</span></a></li>
+  <li><a href="pubs.html"><span>О нас</span></a></li>
+  <li class="last"><a href="#"><span>Контакты</span></a></li>
+</ul>
+<!-- /main menu -->
+
+<div class="conteiner">
+  <div class="conteiner-b">
+
+<!-- \\\left col\\\ -->
+<div class="left-col">
+  <div class="padding">
+
+<!-- side block -->
+<div class="side-block">
+  <div class="side-block-head">Акции</div>
+  <div class="actn-frame">
+    <div class="actn-frame-b">
+      <div class="actn-frame-c">
+      <h2>1 апреля</h2>
+      Только один день!<br />Все товары<br /> Б Е С П Л А Т Н О !
+      </div>
+    </div>
+  </div>
+  <br class="clear none" />
+  <div class="side-block-body">
+    Перераспределение бюджета, как принято считать, как всегда непредсказуемо. Бизнес-план парадоксально определяет из ряда вон выходящий инструмент.
+  </div>
+</div>
+<!-- /side block -->
+
+<!-- left menu -->
+<div class="left-menu">
+  <div class="left-menu-b">
+    <div class="left-menu-c" id="treeMenu">
+
+<ul>
+	<li class="parent">
+		<div><a href="/katalog/filmyi.html">Телефоны</a></div>
+		<ul>
+			<li><div><a href="#">Новинки</a></div></li>
+			<li><div><a href="#">Лидеры продаж</a></div></li>
+			<li class="parent">
+				<div><a href="#">Каталог телефонов</a></div>
+				<ul>
+					<li>
+						<div><a href="#">Apple iPhone</a></div>
+					</li>
+					<li>
+						<div><a href="#">Nokia</a></div>
+					</li>
+					<li>
+						<div><a href="#">Samsung</a></div>
+					</li>
+					<li>
+						<div><a href="#">HTC</a></div>
+					</li>
+					<li class="last">
+						<div><a href="#">LG</a></div>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li class="parent">
+		<div><a href="#">Ноутбуки</a></div>
+		<ul>
+			<li><div><a href="#">Новинки</a></div></li>
+			<li><div><a href="#">Лидеры продаж</a></div></li>
+			<li class="parent">
+				<div><a href="#">Каталог ноутбуков</a></div>
+				<ul>
+					<li>
+						<div><a href="#">Acer</a></div>
+					</li>
+					<li>
+						<div><a href="#">Apple</a></div>
+					</li>
+					<li>
+						<div><a href="#">Asus</a></div>
+					</li>
+					<li>
+						<div><a href="#">Dell</a></div>
+					</li>
+					<li class="last">
+						<div><a href="#">Samsung</a></div>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li class="last parent">
+		<div><a href="#">Компьютеры</a></div>
+		<ul>
+			<li><div><a href="#">Новинки</a></div></li>
+			<li><div><a href="#">Лидеры продаж</a></div></li>
+			<li class="parent">
+				<div><a href="#">Каталог</a></div>
+				<ul>
+					<li>
+						<div><a href="#">Acer</a></div>
+					</li>
+					<li>
+						<div><a href="#">Apple</a></div>
+					</li>
+					<li>
+						<div><a href="#">Asus</a></div>
+					</li>
+					<li>
+						<div><a href="#">Dell</a></div>
+					</li>
+					<li class="last">
+						<div><a href="#">Samsung</a></div>
+					</li>
+				</ul>
+			</li>
+			<li><div><a href="#">Комплектующие</a></div></li>
+		</ul>
+	</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+<!-- /left menu -->
+
+
+<br class="clear none" />
+  </div>
+</div>
+<!-- ///left col -->
+
+<!-- \\\center col\\\ -->
+<div class="center-col">
+  <div class="center-col-b">
+    <div class="padding">
+
+
+
+<!--div class="chat-but"><a href="#">Задать вопрос</a></div-->
+
+<h1>Добро пожаловать в наш магазин!</h1>
+
+<p>Педотубула возникает электрод одинаково по всем направлениям. В ходе валового анализа переуплотнение усиливает неоднородный тензиометр как при нагреве, так и при охлаждении.</p>
+
+
+<!-- \\\promo block\\\ -->
+<br class="clear none" />
+<div class="pr-block">
+
+<h2 class="carousel-title">Новинки</h2>
+
+<div class="promo-block">
+  <div class="promo-block-b">
+    <div class="promo-block-c">
+      <div class="promo-block-d">
+
+<div class="pr-bl-head">
+  <a href="#prev" class="but-prev" title="Назад"></a>
+  <a href="#next" class="but-next" title="Вперед"></a>
+  <strong class="carousel-name"></strong>
+</div>
+
+<div class="pr-bl-body">
+  <div class="pr-bl-body-b">
+    <div class="pr-bl-body-c">
+      <div class="pr-bl-body-d">
+
+<div class="carousel-imgs"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="pr-bl-descr"></div>
+<br class="clear none" />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<ul class="carousel-list" style="display:none">
+  <li>
+    <strong><a href="#1">1 Acer 6291-101G12 Intel CoreDuo T5500</a></strong>
+    <img src="img/photo01.jpg" alt="" height="118" width="171" />
+    <p><b>1 Экран:</b> 12.1", WXGA TFT, 1280 x 800 pix<br /><b>Процессор:</b> Intel® Core™ 2 Duo  T5500 1.66 ГГц<br /><b>Память, накопители:</b> ОЗУ - 1024Мб(4096Мб); HDD - 120Гб; DVD-RW<br /><b>Сетевые интерфейсы:</b> FModem/Lan/Wi-Fi/Bluetooth</p>
+  </li>
+  <li>
+    <strong><a href="#2">2 Acer 6291-101G12 Intel CoreDuo T5500</a></strong>
+    <img class="active" src="img/photo02.jpg" alt="" height="118" width="146" />
+    <p><b>2 Экран:</b> 12.1", WXGA TFT, 1280 x 800 pix<br /><b>Процессор:</b> Intel® Core™ 2 Duo  T5500 1.66 ГГц<br /><b>Память, накопители:</b> ОЗУ - 1024Мб(4096Мб); HDD - 120Гб; DVD-RW<br /><b>Сетевые интерфейсы:</b> FModem/Lan/Wi-Fi/Bluetooth<br />ОЗУ - 1024Мб(4096Мб); HDD - 120Гб; DVD-RW<br /><b>Сетевые интерфейсы:</b> FModem/Lan/Wi-Fi/Bluetooth</p>
+  </li>
+  <li>
+    <strong><a href="#3">3 Acer 6291-101G12 Intel CoreDuo T5500</a></strong>
+    <img src="img/photo01.jpg" alt="" height="118" width="171" />
+    <p><b>3 Экран:</b> 12.1", WXGA TFT, 1280 x 800 pix<br /><b>Процессор:</b> Intel® Core™ 2 Duo  T5500 1.66 ГГц<br /><b>Память, накопители:</b> ОЗУ - 1024Мб(4096Мб); HDD - 120Гб; DVD-RW<br /><b>Сетевые интерфейсы:</b> FModem/Lan/Wi-Fi/Bluetooth</p>
+  </li>
+  <li>
+    <strong><a href="#4">4 Acer 6291-101G12 Intel CoreDuo T5500</a></strong>
+    <img src="img/photo01.jpg" alt="" height="118" width="171" />
+    <p><b>4 Экран:</b> 12.1", WXGA TFT, 1280 x 800 pix<br /><b>Процессор:</b> Intel® Core™ 2 Duo  T5500 1.66 ГГц<br /></p>
+  </li>
+  <li>
+    <strong><a href="#5">5 Acer 6291-101G12 Intel CoreDuo T5500</a></strong>
+    <img src="img/photo01.jpg" alt="" height="118" width="171" />
+    <p><b>5 Экран:</b> 12.1", WXGA TFT, 1280 x 800 pix<br /><b>Процессор:</b> Intel® Core™ 2 Duo  T5500 1.66 ГГц<br /><b>Память, накопители:</b> ОЗУ - 1024Мб(4096Мб); HDD - 120Гб; DVD-RW<br /><b>Сетевые интерфейсы:</b> FModem/Lan/Wi-Fi/Bluetooth</p>
+  </li>
+</ul>
+
+</div>
+<!-- ///promo block/// -->
+
+
+<!-- \\\promo block\\\ -->
+<br class="clear none" />
+<div class="pr-block">
+
+<h2 class="carousel-title">Популярные товары</h2>
+
+<div class="promo-block">
+  <div class="promo-block-b">
+    <div class="promo-block-c">
+      <div class="promo-block-d">
+
+<div class="pr-bl-head">
+  <a href="#prev" class="but-prev" title="Назад"></a>
+  <a href="#next" class="but-next" title="Вперед"></a>
+  <strong class="carousel-name"></strong>
+</div>
+
+<div class="pr-bl-body">
+  <div class="pr-bl-body-b">
+    <div class="pr-bl-body-c">
+      <div class="pr-bl-body-d">
+
+<div class="carousel-imgs"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="pr-bl-descr"></div>
+<br class="clear none" />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<ul class="carousel-list" style="display:none">
+  <li>
+    <strong><a href="#1">1 Acer 6291-101G12 Intel CoreDuo</a></strong>
+    <img src="img/photo01.jpg" alt="" height="118" width="171" />
+    <p><b>1 Экран:</b> 12.1", WXGA TFT, 1280 x 800 pix<br /><b>Процессор:</b> Intel® Core™ 2 Duo  T5500 1.66 ГГц<br /><b>Память, накопители:</b> ОЗУ - 1024Мб(4096Мб); HDD - 120Гб; DVD-RW<br /><b>Сетевые интерфейсы:</b> FModem/Lan/Wi-Fi/Bluetooth</p>
+  </li>
+  <li>
+    <strong><a href="#2">2 Acer 6291-101G12 Intel CoreDuo T5500</a></strong>
+    <img class="active" src="img/photo02.jpg" alt="" height="118" width="146" />
+    <p><b>2 Экран:</b> 12.1", WXGA TFT, 1280 x 800 pix<br /><b>Процессор:</b> Intel® Core™ 2 Duo  T5500 1.66 ГГц<br /><b>Память, накопители:</b> ОЗУ - 1024Мб(4096Мб); HDD - 120Гб; DVD-RW<br /><b>Сетевые интерфейсы:</b> FModem/Lan/Wi-Fi/Bluetooth<br />ОЗУ - 1024Мб(4096Мб); HDD - 120Гб; DVD-RW<br /><b>Сетевые интерфейсы:</b> FModem/Lan/Wi-Fi/Bluetooth</p>
+  </li>
+  <li>
+    <strong><a href="#3">3 Acer 6291-101G12 Intel CoreDuo T5500</a></strong>
+    <img src="img/photo01.jpg" alt="" height="118" width="171" />
+    <p><b>3 Экран:</b> 12.1", WXGA TFT, 1280 x 800 pix<br /><b>Процессор:</b> Intel® Core™ 2 Duo  T5500 1.66 ГГц<br /><b>Память, накопители:</b> ОЗУ - 1024Мб(4096Мб); HDD - 120Гб; DVD-RW<br /><b>Сетевые интерфейсы:</b> FModem/Lan/Wi-Fi/Bluetooth</p>
+  </li>
+</ul>
+
+</div>
+<!-- ///promo block/// -->
+
+
+
+
+<br class="clear none" />
+
+    </div>
+  </div>
+  <br class="clear none" />
+</div>
+<!-- ///center col/// -->
+
+
+  <div class="clear"></div>
+  </div>
+</div>
+
+<!-- \\\footer\\\ -->
+<div class="clear"></div>
+<div class="footer">
+  <div class="footer-b">
+
+<div class="foot-right">
+  <div class="shk-powered">Работает на <a href="http://modx.com/" target="_blank">MODx</a> + <a href="http://modx-shopkeeper.ru/" target="_blank">Shopkeeper</a></div>
+</div>
+
+<ul class="foot-menu">
+  <li><a href="#">Каталог</a></li>
+  <li><a href="#">Поиск</a></li>
+  <li><a href="#">О нас</a></li>
+  <li><a href="#">Контакты</a></li>
+  <li class="last"><a href="#">Карта сайта</a></li>
+</ul>
+
+  </div>
+</div>
+<!-- ///footer/// -->
+
+
+</div>
+
+</body>
+</html>

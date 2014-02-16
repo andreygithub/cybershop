@@ -1,0 +1,100 @@
+Changelog for miniShop2.
+
+2.0.1
+==============
+- [#38] Added "menuindex" in product fields.
+- [#37] Ability to override method miniShop2::changeOrderStatus() in custom order class.
+- [#36] Removed filter_var(), because of issues on stupid hostings.
+- [#35] Added 2 system setting to enable or disable the remembering of panel tabs.
+- [#32] Enabled displaying of errors when uploading files in product gallery.
+- [#30] "miniShopManagerPolicy" is automatically assigned to a group "Administrators".
+- [#29] Added verification of object instance, when loading neighborhood resources in manager.
+- [#28] Returned the lost fields in images of msGallery.
+- [#27] Improved ajax requests in default javascript.
+- [#26] Improvements of categories tree.
+- [#25] Removed replacing of empty alias to id. Added 2 system setting for switching using resource id as alias for categories and products.
+- Fixed quick fields in snippet msOrder. Update your chunks for delivery and payment methods.
+- Improved "totalVar" placeholder in snippet msGallery.
+- Fixed model. Added proper primary keys for xPDOObjects.
+- Ability to load only "miniShop2Config" object on frontend, without default javascript and jQuery.
+- Fixed parameter "depth" in snippet "msProducts".
+- New permissions for work with order: "save" and "view". New events for update order.
+- Added ability to add\update\remove products in order.
+
+2.0.0 pl3
+==============
+- Compatibility with pdoTools 1.2.0
+
+2.0.0 pl2
+==============
+- [mgr] Fixed formatting of dates in category grid.
+- [mgr] Fixed decimals in product category grid.
+- Added ability to create system setting "ms2_cart_max_count" to override maximum number of products for one operation.
+- Fixed placeholders in emails subjects.
+- Fixed generation of thumbnails in gallery for working with ImageMagick.
+- Fixed link type "Many to many".
+- Fixed requirement of non-existing permission "update_document" in processors.
+- Added system setting "ms2_price_snippet" for modification of product price.
+- Added system setting "ms2_weight_snippet" for modification of product weight.
+- Product key in msCartHandler now generates with using "$price" and "$weight", because they can be modified when adding to cart.
+
+2.0.0 pl1
+==============
+- [mgr] Changing of product image now cleans its cache.
+- [mgr] New icons in tree
+- Small improvements of the snippets at initialization.
+- Added selection of product links in snippet msProducts. See the new snippet properties.
+- Added ability to use msProducts with any modResource class.
+- Added property "tvPrefix" to msProducts for compatibility with getResources.
+- Added property "outputSeparator" to snippets msOptions and msProducts.
+- Added system parameter "ms2_price_format" for specifying how to format price of product.
+- Added system parameter "ms2_price_format_no_zeros" for optional removing extra zeros at the end of price.
+- Added system parameter "ms2_weight_format" for specifying how to format weight of product.
+- Added system parameter "ms2_weight_format_no_zeros" for optional removing extra zeros at the end of weight.
+
+2.0.0 rc6
+==============
+- Fixed cleaning pdoTools in msGallery
+- Improved saving payment method in order when quickly switch delivery.
+
+2.0.0 rc5
+==============
+- Integration of PayPal express-checkout payment method.
+
+2.0.0 rc4
+==============
+- Fixed bugs in snippets
+- Fixed joining images by rank when includeThumbs.
+
+2.0.0 rc
+==============
+- [mgr] Added displaying of nested products in categories. System setting "ms2_category_show_nested_products" can disable it.
+- [mgr] Added the ability to link products together.
+- [mgr] Added link to resource from ordered products.
+- [mgr] Added ability to specify web document for Vendor by property "resource".
+- [#6] Fixed error when order makes authenticated user without email.
+- [#8] Fixed remove of order.
+- [#9] Fixed date formatting in manager for working in Firefox.
+- [#10] Added checking for negative value of adding products in cart.
+- [#12] Added regeneration site maps after new product create.
+- [#14] Added check of "register_globals" on cart/add.
+- Added system setting "ms2_product_thumbnail_size" for setting default size of product thumbnail.
+- Added vendor placeholders on product page. Now you can use [[+vendor.name]], [[+vendor.logo]] etc.
+- Added beta scripts for console converting miniShop1 to miniShop2.
+- Added partial french translation.
+- Added method miniShop2::getTagged() from MS1.
+- Added ability to load plugins, that can add new or overload existing product fields in model and manager.
+- Added parameters for joining thumbnails and tvs in snippets msProducts, msCart and msGetOrder.
+- Improved save of product options.
+- Fixed automatic install of pdoTools.
+- Fixed fetching images in snippet msGallery
+- Other fixes and improvements.
+
+2.0.0 beta-1
+==============
+- Added manager pages
+- Added create and manage orders
+
+2.0.0 beta-0
+==============
+- Initial release.

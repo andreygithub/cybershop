@@ -1,0 +1,486 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	
+	<!--[if IE 7]>
+	  <link rel="stylesheet" type="text/css" href="css/ie7fix.css">
+	<![endif]-->
+	
+	<!--[if lt IE 7]>
+	  <link rel="stylesheet" type="text/css" href="css/ie6fix.css">
+	<![endif]-->
+	
+	<script src="js/jquery-1.3.2.min.js" type="text/javascript"></script>
+	<script src="js/fieldFocus.js" type="text/javascript"></script>
+	<script src="js/JQuery.MenuTree.js" type="text/javascript"></script>
+	<script src="js/carousel.js" type="text/javascript"></script>
+	<script src="js/script.js" type="text/javascript"></script>
+
+</head>
+<body>
+
+<div class="main-cont">
+
+<!-- \\\header\\\ -->
+<div class="header">
+
+<!-- login box -->
+  <div class="relative">
+    <div class="login-box">
+      <div class="login-box-b">
+        <div class="login-box-c">
+      
+<form action="" method="post">
+<div class="lgb-l">Логин</div>
+<div class="lgb-r"><input class="textfield" type="text" name="" /></div>
+<div class="lgb-l">Пароль</div>
+<div class="lgb-r"><input class="textfield" type="text" name="" /></div>
+<br class="clear none" />
+<div class="marg-tb">
+  <input class="button" type="image" src="img/login_but.gif" alt="Войти" />
+  <input type="checkbox" name="" id="remember" />
+  <label for="remember">запомнить меня</label>
+</div>
+</form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- /login box -->
+
+  <div class="hdr-top">
+    <ul>
+      <li><span>На главную</span></li>
+      <li><a href="#">Карта сайта</a></li>
+    </ul>
+  </div>
+  
+  <div class="hdr-top-b">
+    <ul>
+      <li><big><a href="#">Регистрация</a></big></li>
+      <li><a href="#" class="js-link">напомнить пароль</a></li>
+    </ul>
+    
+    <div class="search">
+      <form action="" method="post">
+        <input class="button" type="image" src="img/search_button.gif" alt="Искать" title="Искать" />
+	<input type="text" onfocus="if(this.value=='Поиск')this.value=''" value="Поиск" name="search" class="textfield" />
+      </form>
+    </div>
+    
+  </div>
+  
+  <div class="hdr-img">
+    <div class="hdr-img-b">
+      <div class="logo">
+        <a href="/"><img src="img/shk_logo.png" alt="" height="75" width="265" /></a>
+      </div>
+      <div class="ad-bn">
+        <a href="#"><img src="img/468x60.gif" alt="" height="60" width="468" /></a>
+      </div>
+    </div>
+  </div>
+  
+
+</div>
+<!-- ///header/// -->
+
+
+<!-- main menu -->
+<ul class="main-menu">
+  <li><a href="index.html"><span>Главная</span></a></li>
+  <li class="active"><span><span>Каталог</span></span></li>
+  <li><a href="#"><span>Поиск</span></a></li>
+  <li><a href="pubs.html"><span>О нас</span></a></li>
+  <li class="last"><a href="#"><span>Контакты</span></a></li>
+</ul>
+<!-- /main menu -->
+
+<div class="conteiner">
+  <div class="conteiner-b">
+
+<!-- \\\left col\\\ -->
+<div class="left-col">
+  <div class="padding">
+
+<!-- shop basket -->
+<div class="shop-cart ct-empty">
+  <div class="side-block-head">Корзина</div>
+  <div class="shop-cart-body">
+	
+	<div class="bs-empty">Товаров<br /> не выбрано</div>
+
+  </div>
+</div>
+<!-- /shop basket -->
+
+<div class="shop-cart ct-full">
+  <div class="side-block-head">Корзина</div>
+  <div class="shop-cart-body">
+	<div align="right">
+	      <a class="js-link" href="#" id="butEmptyCart">Очистить корзину</a>
+	</div>
+	<table width="100%">
+	<tr class="cart-order">
+		<td width="50%">Вы выбрали:</td>
+		<td width="50%"><b>2</b> товара</td>
+	</tr>
+	</table>
+	<div align="center">Общая сумма: <strong>2440</strong> руб.</div>
+	<div class="order-link"><a href="#">Оформить заказ</a></div>
+  </div>
+</div>
+
+
+<!-- left menu -->
+<div class="left-menu">
+  <div class="left-menu-b">
+    <div class="left-menu-c" id="treeMenu">
+
+<ul>
+	<li class="parent active">
+		<div><a href="/katalog/filmyi.html">Телефоны</a></div>
+		<ul>
+			<li class="active"><div><a href="#">Новинки</a></div></li>
+			<li><div><a href="#">Лидеры продаж</a></div></li>
+			<li class="parent">
+				<div><a href="#">Каталог телефонов</a></div>
+				<ul>
+					<li>
+						<div><a href="#">Apple iPhone</a></div>
+					</li>
+					<li>
+						<div><a href="#">Nokia</a></div>
+					</li>
+					<li>
+						<div><a href="#">Samsung</a></div>
+					</li>
+					<li>
+						<div><a href="#">HTC</a></div>
+					</li>
+					<li class="last">
+						<div><a href="#">LG</a></div>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li class="parent">
+		<div><a href="#">Ноутбуки</a></div>
+		<ul>
+			<li><div><a href="#">Новинки</a></div></li>
+			<li><div><a href="#">Лидеры продаж</a></div></li>
+			<li class="parent">
+				<div><a href="#">Каталог ноутбуков</a></div>
+				<ul>
+					<li>
+						<div><a href="#">Acer</a></div>
+					</li>
+					<li>
+						<div><a href="#">Apple</a></div>
+					</li>
+					<li>
+						<div><a href="#">Asus</a></div>
+					</li>
+					<li>
+						<div><a href="#">Dell</a></div>
+					</li>
+					<li class="last">
+						<div><a href="#">Samsung</a></div>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li class="last parent">
+		<div><a href="#">Компьютеры</a></div>
+		<ul>
+			<li><div><a href="#">Новинки</a></div></li>
+			<li><div><a href="#">Лидеры продаж</a></div></li>
+			<li class="parent">
+				<div><a href="#">Каталог</a></div>
+				<ul>
+					<li>
+						<div><a href="#">Acer</a></div>
+					</li>
+					<li>
+						<div><a href="#">Apple</a></div>
+					</li>
+					<li>
+						<div><a href="#">Asus</a></div>
+					</li>
+					<li>
+						<div><a href="#">Dell</a></div>
+					</li>
+					<li class="last">
+						<div><a href="#">Samsung</a></div>
+					</li>
+				</ul>
+			</li>
+			<li><div><a href="#">Комплектующие</a></div></li>
+		</ul>
+	</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+<!-- /left menu -->
+
+
+<br class="clear none" />
+  </div>
+</div>
+<!-- ///left col -->
+
+<!-- \\\center col\\\ -->
+<div class="center-col">
+  <div class="center-col-b">
+    <div class="padding">
+
+<!--div class="chat-but"><a href="#">Задать вопрос</a></div-->
+
+<!-- \ -->
+<div class="centerpath">
+  <ul>
+    <li><a href="#">Главная</a></li>
+    <li><a href="#">Каталог</a></li>
+    <li><a href="#">Ноутбуки</a></li>
+    <li class="last"><span>Подраздел</span></li>
+  </ul>
+</div>
+<!-- / -->
+
+<h1>Заголовок раздела или подраздела</h1>
+
+<div class="filters">
+	<span>Показать:</span>
+	<a href="#" class="active">Все</a>
+	<a href="#">Продажа</a>
+	<a href="#">Прокат</a>
+	
+	<span class="sep-vert"><span>&nbsp;</span></span>
+	
+	<span>Сортировать:</span>
+	<a href="#" class="active sort-asc">Название</a>
+	<a href="#" class="sort-asc">Дата</a>
+	<a href="#" class="sort-asc">Цена</a>
+</div>
+
+<br class="clear none" />
+
+<p>Педотубула возникает электрод одинаково по всем направлениям. В ходе валового анализа переуплотнение усиливает неоднородный тензиометр как при нагреве, так и при охлаждении.</p>
+
+<br class="clear none" />
+
+<!-- \\\ -->
+<div class="product">
+	<div class="product-b">
+		<div class="product-name">
+			<strong><a href="#" class="shs-link">Звездный путь</a></strong>
+		</div>
+		<div class="left">
+			<div class="product-img">
+				<a href="#"><img width="160" height="118" alt="" src="img/BentleyDesign.jpg" /></a>
+			</div>
+			<div class="product-price">
+				<div class="product-price-b">
+					<b class="shs-price">25 220</b> руб.
+				</div>
+			</div>
+		</div>
+		<div class="right">
+			<div class="product-desc">
+			Когда Нерон с планеты Ромул приходит из будущего, чтобы отомстить Федерации, конкуренты Кирк и Спок должны объединиться, чтобы не дать ему разрушить все, что им дорого...
+			</div>
+			<div style="width:123px;" class="product-tocart shk-item">
+				<div class="product-tocart-b">
+					<input type="image" name="shk-submit" alt="купить" src="img/but_tocart.gif" class="but-tocart shk-but" />
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /// -->
+
+<!-- \\\ -->
+<div class="product">
+	<div class="product-b">
+		<div class="product-name">
+			<strong><a href="#" class="shs-link">Звездный путь</a></strong>
+		</div>
+		<div class="left">
+			<div class="product-img">
+				<a href="#"><img width="160" height="118" alt="" src="img/BentleyDesign.jpg" /></a>
+			</div>
+			<div class="product-price">
+				<div class="product-price-b">
+					<b class="shs-price">25 220</b> руб.
+				</div>
+			</div>
+		</div>
+		<div class="right">
+			<div class="product-desc">
+			Когда Нерон с планеты Ромул приходит из будущего, чтобы отомстить Федерации, конкуренты Кирк и Спок должны объединиться, чтобы не дать ему разрушить все, что им дорого...
+			</div>
+			<div style="width:123px;" class="product-tocart shk-item">
+				<div class="product-tocart-b">
+					<input type="image" name="shk-submit" alt="купить" src="img/but_tocart.gif" class="but-tocart shk-but" />
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /// -->
+
+<!-- \\\ -->
+<div class="product">
+	<div class="product-b">
+		<div class="product-name">
+			<strong><a href="#" class="shs-link">Звездный путь</a></strong>
+		</div>
+		<div class="left">
+			<div class="product-img">
+				<a href="#"><img width="160" height="118" alt="" src="img/BentleyDesign.jpg" /></a>
+			</div>
+			<div class="product-price">
+				<div class="product-price-b">
+					<b class="shs-price">25 220</b> руб.
+				</div>
+			</div>
+		</div>
+		<div class="right">
+			<div class="product-desc">
+			Когда Нерон с планеты Ромул приходит из будущего, чтобы отомстить Федерации, конкуренты Кирк и Спок должны объединиться, чтобы не дать ему разрушить все, что им дорого...
+			</div>
+			<div style="width:123px;" class="product-tocart shk-item">
+				<div class="product-tocart-b">
+					<input type="image" name="shk-submit" alt="купить" src="img/but_tocart.gif" class="but-tocart shk-but" />
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /// -->
+
+<!-- \\\ -->
+<div class="product">
+	<div class="product-b">
+		<div class="product-name">
+			<strong><a href="#" class="shs-link">Звездный путь</a></strong>
+		</div>
+		<div class="left">
+			<div class="product-img">
+				<a href="#"><img width="160" height="118" alt="" src="img/BentleyDesign.jpg" /></a>
+			</div>
+			<div class="product-price">
+				<div class="product-price-b">
+					<b class="shs-price">25 220</b> руб.
+				</div>
+			</div>
+		</div>
+		<div class="right">
+			<div class="product-desc">
+			Когда Нерон с планеты Ромул приходит из будущего, чтобы отомстить Федерации, конкуренты Кирк и Спок должны объединиться, чтобы не дать ему разрушить все, что им дорого...
+			</div>
+			<div style="width:123px;" class="product-tocart shk-item">
+				<div class="product-tocart-b">
+					<input type="image" name="shk-submit" alt="купить" src="img/but_tocart.gif" class="but-tocart shk-but" />
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /// -->
+
+<br class="clear none" />
+
+<div class="nextpage separator hidden4"><a href="#">Ещё (4)</a></div>
+
+<!-- pages -->
+<div class="pages">
+  Страницы:
+  <ul>
+    <li><a href="#">&laquo;</a></li>
+    <li><a href="#">1</a></li>
+    <li><span>2</span></li>
+    <li><a href="#">3</a></li>
+    <li>...</li>
+    <li><a href="#">20</a></li>
+    <li><a href="#">&raquo;</a></li>
+  </ul>
+</div>
+<!-- /pages -->
+
+<br class="clear none" />
+
+    </div>
+  </div>
+  <br class="clear none" />
+</div>
+<!-- ///center col/// -->
+
+
+  <div class="clear"></div>
+  </div>
+</div>
+
+<!-- \\\footer\\\ -->
+<div class="clear"></div>
+<div class="footer">
+  <div class="footer-b">
+
+<div class="foot-right">
+  <div class="shk-powered">Работает на <a href="http://modx.com/" target="_blank">MODx</a> + <a href="http://modx-shopkeeper.ru/" target="_blank">Shopkeeper</a></div>
+</div>
+
+<ul class="foot-menu">
+  <li><a href="#">Каталог</a></li>
+  <li><a href="#">Поиск</a></li>
+  <li><a href="#">О нас</a></li>
+  <li><a href="#">Контакты</a></li>
+  <li class="last"><a href="#">Карта сайта</a></li>
+</ul>
+
+  </div>
+</div>
+<!-- ///footer/// -->
+
+
+</div>
+
+<!-- \\\helper\\\ -->
+<div class="helper" id="stuffHelper" style="top:800px;left:300px; display:none;">
+  <div class="helper-b">
+    <div class="helper-c">
+
+<div class="helper-body">
+
+<div class="hr-shs-name">Acer Aspire 2930Z-583G25Mi Intel CoreDuo</div>
+
+<div class="hr-shs-count">
+  Кол-во
+  <input id="stuffCount" type="text" name="" value="1" />
+  <img class="field-arr-up" src="img/arr_up.gif" alt="больше" title="больше" height="9" width="17" /><img class="field-arr-down" src="img/arr_down.gif" alt="меньше" title="меньше" height="9" width="17" />
+</div>
+
+<div class="hr-shs-buts">
+  <button type="button" name="ok" class="but-ok" title="подтвердить"></button><button type="button" name="cancel" class="but-cancel" title="отменить" onclick="document.getElementById('stuffHelper').style.display='none'"></button>
+</div>
+
+</div>
+
+    </div>
+  </div>
+</div>
+<!-- ///helper/// -->
+
+</body>
+</html>

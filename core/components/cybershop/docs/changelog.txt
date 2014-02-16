@@ -1,0 +1,13 @@
+Changelog file for Cybershop component.
+
+Cybershop 1.2.1 beta
+====================================
+- Updates and remove some bugs
+
+Cybershop 1.1 beta
+====================================
+- Updates 
+
+Cybershop 1.0 beta
+====================================
+- Updates

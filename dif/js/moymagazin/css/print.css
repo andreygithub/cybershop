@@ -1,0 +1,112 @@
+
+html, body, img, form {margin: 0px; padding: 0px; border: none;}
+body {background-color:#fff;}
+body, td {font: 15px "Trebuchet MS", Helvetica, sans-serif; color: #000;}
+a {text-decoration: underline;}
+a:hover {text-decoration: none;}
+table {border: 0px; border-collapse: collapse;}
+td {vertical-align: top;}
+p {padding: 0px; margin: 0px 0px 12px 0px;}
+
+h1 {font-size:20px; font-weight:normal; margin:0 0 10px 0; padding:0; color:#515151;}
+h2 {font-size:18px; font-weight:normal; margin:0 0 10px 0; padding:0; color:#515151;}
+h3 {font-size:16px; margin:0 0 10px 0; padding:0; color:#515151;}
+
+.clear {clear:both;}
+.none {line-height:0;}
+.relative {position:relative;}
+.marg-tb {margin:5px 0;}
+.float-l {float: left;}
+.float-r {float: right;}
+.img-marg-l {float:left; margin:0 10px 5px 0;}
+.img-marg-r {float:right; margin:0 0 5px 10px;}
+.js-link {text-decoration: none; border-bottom: 1px dashed #003CFF; padding-bottom:0;}
+
+/*** color ***/
+a {color: #003cff;}
+.hdr-top-b ul a {color:#1A47A6;}
+.hdr-top-b .js-link {border-color:#1A47A6;}
+.main-menu li a:hover span, .main-menu li.active a span, .main-menu li.active span span {color:#baebff;}
+.main-menu {background-color:#385BB7;}
+.list-menu .active li a {color:#003cff;}
+.hdr-img {background-color: #163CE5;}
+.actn-frame h2 {color:#003cff;}
+.pr-bl-head strong {color:#003cff;}
+.pr-bl-body div.col img.active {border-color:#003cff;}
+.chat-but a {color:#970000; border-color:#970000;}
+.shop-cart .clearall a {border-color:#003CFF;}
+.goods-price {color:#003cff;}
+.pages a {background-color:#5B88E6;}
+.pages a:hover {background-color:#1A47A6;}
+.pages span {background-color:#1A47A6;}
+/*** ***/
+
+/* header */
+.header {margin:0 0 20px 0;}
+
+.hdr-img {height:138px; background-image: url(../img/hdr_img.jpg); background-position:15% top; background-repeat:repeat-x;}
+.hdr-img-b {height:138px; background: url(../img/hdr_c.png) left top no-repeat;}
+.logo {margin:28px 0 0 4%; width:305px; height:95px; float:left;}
+.logo a {outline: none;}
+.ad-bn {margin:0 20px 0 305px; padding:60px 0 0 0; text-align: center;}
+
+/* catalog */
+.catalog-line {border-top: 1px dashed #bebebe; border-bottom: 1px dashed #bebebe;}
+.product {margin:0 20px 15px 0; padding:0 0 5px 0;}
+.product-name {margin:0 0 10px 0;}
+.product-price {margin:0; font-size: 17px;}
+.product-price-b {padding:4px 0 0 0; background: url(../img/ct_price.gif) right -28px no-repeat;}
+.product-desc {margin:0 0 5px 0; padding-bottom:10px; border-bottom: 1px dashed #bebebe;}
+
+/* catalog-menu */
+.center-menu {list-style-type: none; margin:0; padding:0;}
+.center-menu ul {margin:0; padding:0; list-style-type: none;}
+.center-menu li {margin:10px 0; padding:0 0 0 12px; background: url(../img/box1.gif) left 9px no-repeat;}
+.center-menu li li {background: url(../img/box2.gif) left 9px no-repeat;}
+.center-menu a {}
+.center-menu span {font-size:12px;}
+
+/* film description table */
+.film-descr-tab {width:80%; margin:5px;}
+.film-descr-tab td {padding:2px 5px; border-bottom:1px dashed #a6a6a6;}
+
+/* form */
+.s-form {width:100%;}
+.s-form td {}
+.s-button {width:100px;}
+.s-button button, .s-button2 button {display: block; width:100px; height:22px; line-height:22px; overflow: hidden; padding:0 0 2px 0; color:#E6E6E6; font-size:13px; text-align: center; border:0; cursor: pointer;}
+.s-button {background: url(../img/button.gif) left top no-repeat #7F7F7F;}
+.s-button button {background: url(../img/button.gif) right -23px no-repeat;}
+.s-button2 {background: url(../img/button2.gif) left top no-repeat #7F7F7F;}
+.s-button2 button {background: url(../img/button2.gif) right -23px no-repeat;}
+.s-button, .s-button2 {height:22px; margin:5px 0;}
+.s-form .s-button, .s-form .s-button2 {width:110px;}
+.s-form .s-button button, .s-form .s-button2 button {width:110px;}
+.login-box .s-button2 {width:90px; margin-left:5px;}
+.login-box .s-button button, .login-box .s-button2 button {width:90px;}
+.textfield, .s-form textarea {width:98%; border:1px solid #818181; background-color: #EFEFEF; padding:2px; font:13px "Trebuchet MS", Tahoma, Arial, sans-serif; border-radius: 3px; -o-border-radius:3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; -khtml-border-radius: 3px;}
+.textfield:focus, .s-form textarea:focus {border-color:#003CFF; outline:none;}
+
+form,
+.product-img,
+.product form,
+.product-tocart,
+object,
+.centerpath,
+.search,
+.hdr-top,
+.hdr-top-b,
+.login-box,
+.left-col,
+.main-menu,
+.chat-but,
+.pr-block,
+.shs-tocart,
+.shop-cart,
+.pages,
+.footer,
+#fancy_overlay {display: none;}
+
+#fancy_wrap {}
+#fancy_outer {width:100% !important;}
+

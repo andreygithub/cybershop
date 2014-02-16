@@ -1,0 +1,775 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model package="cybershop" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM" phpdoc-package="modx" phpdoc-subpackage="" version="1.1">
+  
+    <object class="csCatalog" table="cybershop_catalog" extends="xPDOSimpleObject">    
+        <field key="name" dbtype="varchar" precision="255" phptype="string" null="false" default="" index="index" />
+        <field key="description" dbtype="varchar" precision="255" phptype="string" null="false" default=""/>
+        <field key="article" dbtype="varchar" precision="255" phptype="string" null="false" default="" index="index" />
+        <field key="url" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
+        <field key="introtext" dbtype="text" phptype="string" null="false" default="" />
+        <field key="fulltext" dbtype="text" phptype="string" null="false" default="" />
+        <field key="made_in" dbtype="text" phptype="string" null="false" default="" />
+        <field key="image" dbtype="varchar" precision="255" phptype="string" null="false" default=""/>
+        <field key="media" dbtype="varchar" precision="255" phptype="string" null="false" default=""/>
+        <field key="brand" dbtype="int" precision="10" phptype="integer" null="false" default="0" index="index" />
+        <field key="category" dbtype="int" precision="10" phptype="integer" null="false" default="0" index="index" />
+        <field key="rating" dbtype="decimal" precision="12,2" phptype="float" null="false" default="0" />
+        <field key="rating_num" dbtype="decimal" precision="12" phptype="float" null="false" default="0" />
+        <field key="stars" dbtype="decimal" precision="12,2" phptype="float" null="false" default="0" />
+        <field key="stars_num" dbtype="decimal" precision="12" phptype="float" null="false" default="0" />
+        <field key="like" dbtype="decimal" precision="12" phptype="float" null="false" default="0" />
+        <field key="popular" dbtype="decimal" precision="12" phptype="float" null="false" default="0" />
+        <field key="price1" dbtype="decimal" precision="12,2" phptype="float" null="false" default="0" index="index" />
+        <field key="price2" dbtype="decimal" precision="12,2" phptype="float" null="false" default="0" index="index" />
+        <field key="price3" dbtype="decimal" precision="12,2" phptype="float" null="false" default="0" index="index" />
+        <field key="weight" dbtype="decimal" precision="12,3" phptype="float" null="false" default="0" />
+        <field key="value1" dbtype="decimal" precision="12,3" phptype="float" null="false" default="0" />
+        <field key="value2" dbtype="decimal" precision="12,3" phptype="float" null="false" default="0" />
+        <field key="value3" dbtype="decimal" precision="12,3" phptype="float" null="false" default="0" />
+        <field key="alias" dbtype="varchar" precision="255" phptype="string" null="true" default="" index="index" />
+        <field key="createdby" dbtype="int" precision="10" phptype="integer" null="false" default="0" />
+        <field key="createdon" dbtype="datetime" phptype="datetime" null="true" default="0000-00-00 00:00:00" />
+        <field key="editedby" dbtype="int" precision="10" phptype="integer" null="false" default="0" />
+        <field key="editedon" dbtype="datetime" phptype="datetime" null="true" default="0000-00-00 00:00:00" />
+        <field key="ceo_data" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
+        <field key="ceo_key" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
+        <field key="ceo_description" dbtype="text" phptype="string" null="false" default="" />
+        <field key="properties" dbtype="text" phptype="json" null="true" />
+        <field key="active" dbtype="tinyint" precision="1" attributes="unsigned" phptype="integer" null="false" default="1" index="index" />
+        <field key="deleted" dbtype="tinyint" precision="1" attributes="unsigned" phptype="integer" null="false" default="0" index="index" />
+        <field key="deletedon" dbtype="datetime" phptype="datetime" null="true" default="0000-00-00 00:00:00" />
+        <field key="deletedby" dbtype="int" precision="10" phptype="integer" null="false" default="0" />
+        <field key="new" dbtype="tinyint" precision="1" attributes="unsigned" phptype="integer" null="false" default="0" index="index" />
+        <field key="sellout" dbtype="tinyint" precision="1" attributes="unsigned" phptype="integer" null="false" default="0" index="index" />
+        <field key="discount" dbtype="tinyint" precision="1" attributes="unsigned" phptype="integer" null="false" default="0" index="index" />
+        <field key="onhomepage" dbtype="tinyint" precision="1" attributes="unsigned" phptype="integer" null="false" default="0" index="index" />
+       
+        <index alias="active" name="active" primary="false" unique="false" type="BTREE">
+            <column key="active" length="" collation="A" null="false" />
+        </index>
+        <index alias="deleted" name="deleted" primary="false" unique="false" type="BTREE">
+            <column key="deleted" length="" collation="A" null="false" />
+        </index>
+        <index alias="new" name="new" primary="false" unique="false" type="BTREE">
+            <column key="new" length="" collation="A" null="false" />
+        </index>
+        <index alias="sellout" name="sellout" primary="false" unique="false" type="BTREE">
+            <column key="sellout" length="" collation="A" null="false" />
+        </index>
+        <index alias="discount" name="discount" primary="false" unique="false" type="BTREE">
+            <column key="discount" length="" collation="A" null="false" />
+        </index>
+        <index alias="onhomepage" name="onhomepage" primary="false" unique="false" type="BTREE">
+            <column key="onhomepage" length="" collation="A" null="false" />
+        </index>       
+        <index alias="price1" name="price1" primary="false" unique="false" type="BTREE">
+            <column key="price1" length="" collation="A" null="false" />
+        </index>
+        <index alias="price2" name="price2" primary="false" unique="false" type="BTREE">
+            <column key="price2" length="" collation="A" null="false" />
+        </index>
+        <index alias="price3" name="price3" primary="false" unique="false" type="BTREE">
+            <column key="price3" length="" collation="A" null="false" />
+        </index>
+        <index alias="alias" name="alias" primary="false" unique="false" type="BTREE">
+            <column key="alias" length="" collation="A" null="true" />
+        </index>
+        <index alias="name" name="name" primary="false" unique="false" type="BTREE">
+            <column key="name" length="" collation="A" null="false" />
+        </index>
+        <index alias="article" name="article" primary="false" unique="false" type="BTREE">
+            <column key="article" length="" collation="A" null="false" />
+        </index>
+        <index alias="brand" name="brand" primary="false" unique="false" type="BTREE">
+            <column key="brand" length="" collation="A" null="false" />
+        </index>
+        <index alias="category" name="category" primary="false" unique="false" type="BTREE">
+            <column key="category" length="" collation="A" null="false" />
+        </index>
+       
+        <aggregate alias="Brand" class="csBrand" local="brand" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="Category" class="csCategory" local="category" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="CreatedBy" class="modUser" local="createdby" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="EditedBy" class="modUser" local="editedby" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="DeletedBy" class="modUser" local="deletedby" foreign="id" cardinality="one" owner="foreign" />
+        <composite alias="CatalogFilterTable" class="csCatalogFilterTable" local="id" foreign="catalog" cardinality="many" owner="local" /> 
+        <composite alias="CatalogPropertyTable" class="csCatalogPropertyTable" local="id" foreign="catalog" cardinality="many" owner="local" /> 
+        <composite alias="CatalogSimilarTable" class="csCatalogSimilarTable" local="id" foreign="catalog" cardinality="many" owner="local" />        
+        <composite alias="CatalogImageTable" class="csCatalogImageTable" local="id" foreign="catalog" cardinality="many" owner="local" />        
+        <composite alias="CatalogComplectTable" class="csCatalogComplectTable" local="id" foreign="catalog" cardinality="many" owner="local" />        
+  
+    </object> 
+ 
+    <object class="csCatalogFilterTable" table="cybershop_catalogfiltertable" extends="xPDOSimpleObject">  
+        <field key="catalog" dbtype="int" precision="10" phptype="integer" null="false" default="0" index="index" />
+        <field key="filteritem" dbtype="int" precision="10" phptype="integer" null="false" default="0" index="index" />
+         
+        <index alias="catalog" name="catalog" primary="false" unique="false" type="BTREE">
+            <column key="catalog" length="" collation="A" null="false" />
+        </index>        
+        <index alias="filteritem" name="filteritem" primary="false" unique="false" type="BTREE">
+            <column key="filteritem" length="" collation="A" null="false" />
+        </index>    
+        
+        <aggregate alias="Catalog" class="csCatalog" local="catalog" foreign="id" cardinality="many" owner="foreign" />
+        <aggregate alias="FilterItem" class="csFilterItem" local="filteritem" foreign="id" cardinality="many" owner="local" />
+        <aggregate alias="Filter" class="csFilter" local="filteritem" foreign="id" cardinality="many" owner="local" />
+       
+    </object> 
+      
+    <object class="csCatalogPropertyTable" table="cybershop_catalogpropertytable" extends="xPDOSimpleObject">  
+        <field key="catalog" dbtype="int" precision="10" phptype="integer" null="false" default="0" index="index" />
+        <field key="value" dbtype="text" phptype="string" null="false" default="" />
+        <field key="property" dbtype="int" precision="10" phptype="integer" null="false" default="0" index="index" />
+         
+        <index alias="catalog" name="catalog" primary="false" unique="false" type="BTREE">
+            <column key="catalog" length="" collation="A" null="false" />
+        </index>        
+        <index alias="property" name="property" primary="false" unique="false" type="BTREE">
+            <column key="property" length="" collation="A" null="false" />
+        </index>    
+        
+        <aggregate alias="Catalog" class="csCatalog" local="catalog" foreign="id" cardinality="many" owner="foreign" />
+        <aggregate alias="Property" class="csProperty" local="property" foreign="id" cardinality="many" owner="local" />
+       
+    </object> 
+    
+    <object class="csCatalogImageTable" table="cybershop_catalogimagetable" extends="xPDOSimpleObject">  
+        <field key="catalog" dbtype="int" precision="10" phptype="integer" null="false" default="0" index="index" />
+        <field key="name" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
+        <field key="image" dbtype="varchar" precision="255" phptype="string" null="false" default=""/>
+        <field key="fulltext" dbtype="text" phptype="string" null="false" default="" /> 
+        <field key="sort_position" dbtype="int" precision="10" phptype="integer" null="true" default="0" index="index" />
+ 
+               
+        <index alias="catalog" name="catalog" primary="false" unique="false" type="BTREE">
+            <column key="catalog" length="" collation="A" null="false" />
+        </index>        
+        <index alias="sort_position" name="sort_position" primary="false" unique="false" type="BTREE">
+            <column key="sort_position" length="" collation="A" null="false" />
+        </index>
+                
+        <aggregate alias="Catalog" class="csCatalog" local="catalog" foreign="id" cardinality="many" owner="foreign" />
+       
+    </object> 
+    
+    <object class="csCatalogComplectTable" table="cybershop_catalogcomplecttable" extends="xPDOSimpleObject">   
+        <field key="catalog" dbtype="int" precision="10" phptype="integer" null="false" default="0" index="index" />
+        <field key="name" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
+        <field key="description" dbtype="varchar" precision="255" phptype="string" null="false" default=""/>
+        <field key="introtext" dbtype="text" phptype="string" null="false" default="" />
+        <field key="fulltext" dbtype="text" phptype="string" null="false" default="" />
+        <field key="image" dbtype="varchar" precision="255" phptype="string" null="false" default=""/>
+        <field key="url" dbtype="varchar" precision="255" phptype="string" null="false" default=""/>
+        <field key="ceo_data" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
+        <field key="ceo_data" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
+        <field key="ceo_description" dbtype="text" phptype="string" null="false" default="" />
+        <field key="amount" dbtype="int" precision="15" phptype="integer" null="false" default="0" />
+        <field key="price1" dbtype="decimal" precision="12,2" phptype="float" null="false" default="0" />
+        <field key="price2" dbtype="decimal" precision="12,2" phptype="float" null="false" default="0" />
+        <field key="price3" dbtype="decimal" precision="12,2" phptype="float" null="false" default="0" />
+        <field key="weight" dbtype="decimal" precision="12,3" phptype="float" null="false" default="0" />
+        <field key="value1" dbtype="decimal" precision="12,3" phptype="float" null="false" default="0" />
+        <field key="value2" dbtype="decimal" precision="12,3" phptype="float" null="false" default="0" />
+        <field key="value3" dbtype="decimal" precision="12,3" phptype="float" null="false" default="0" />
+        <field key="properties" dbtype="text" phptype="json" null="true" />
+        <field key="sort_position" dbtype="int" precision="10" phptype="integer" null="true" default="0" index="index" />
+        
+        <index alias="catalog" name="catalog" primary="false" unique="false" type="BTREE">
+            <column key="catalog" length="" collation="A" null="false" />
+        </index> 
+        <index alias="sort_position" name="sort_position" primary="false" unique="false" type="BTREE">
+            <column key="sort_position" length="" collation="A" null="false" />
+        </index>
+               
+        <aggregate alias="Catalog" class="csCatalog" local="catalog" foreign="id" cardinality="many" owner="foreign" />
+       
+    </object>
+    
+    <object class="csCatalogSimilarTable" table="cybershop_catalogsimilartable" extends="xPDOSimpleObject">  
+        <field key="catalog" dbtype="int" precision="10" phptype="integer" null="false" default="0" index="index" />
+        <field key="similarelement" dbtype="int" precision="10" phptype="integer" null="false" default="0" index="index" />
+        <field key="properties" dbtype="text" phptype="json" null="true" />    
+        <field key="sort_position" dbtype="int" precision="10" phptype="integer" null="true" default="0" index="index" />
+        
+        <index alias="catalog" name="catalog" primary="false" unique="false" type="BTREE">
+            <column key="catalog" length="" collation="A" null="false" />
+        </index>        
+        <index alias="similarelement" name="similarelement" primary="false" unique="false" type="BTREE">
+            <column key="similarelement" length="" collation="A" null="false" />
+        </index>    
+        
+        <aggregate alias="Catalog" class="csCatalog" local="catalog" foreign="id" cardinality="many" owner="foreign" />
+        <aggregate alias="Similarelement" class="csCatalog" local="similarelement" foreign="id" cardinality="many" owner="local" />
+    </object>  
+    
+    <object class="csCatalogStoreTable" table="cybershop_categorystoretable" extends="xPDOSimpleObject">  
+        <field key="catalog" dbtype="int" precision="10" phptype="integer" null="false" default="0" index="index" />
+        <field key="complect" dbtype="int" precision="10" phptype="integer" null="false" default="0" index="index" />
+        <field key="store" dbtype="int" precision="10" phptype="integer" null="false" default="0" index="index" />
+        <field key="number" dbtype="decimal" precision="12,3" phptype="float" null="false" default="0" />
+            
+        <index alias="catalog" name="catalog" primary="false" unique="false" type="BTREE">
+            <column key="category" length="" collation="A" null="false" />
+        </index>        
+        <index alias="store" name="store" primary="false" unique="false" type="BTREE">
+            <column key="store" length="" collation="A" null="false" />
+        </index>         
+        
+        <aggregate alias="Catalog" class="csCatalog" local="catalog" foreign="id" cardinality="many" owner="foreign" />
+        <aggregate alias="Store" class="csStore" local="property" foreign="id" cardinality="many" owner="local" />
+    </object>   
+    
+    <object class="csCatalogСommentTable" table="cybershop_catalogcommenttable" extends="xPDOSimpleObject">  
+        <field key="catalog" dbtype="int" precision="10" phptype="integer" null="false" default="0" index="index" />
+        <field key="rate" dbtype="decimal" precision="10,2" phptype="integer" null="false" default="0" />
+        <field key="rate_num" dbtype="int" precision="10" phptype="integer" null="false" default="0" />
+        <field key="properties" dbtype="text" phptype="json" null="true" />
+        <field key="answer" dbtype="tinyint" precision="1" attributes="unsigned" phptype="integer" null="false" default="1" />
+        <field key="answer_id" dbtype="int" precision="10" phptype="integer" null="false" default="0" />
+        <field key="active" dbtype="tinyint" precision="1" attributes="unsigned" phptype="integer" null="false" default="1" index="index" />
+        <field key="deleted" dbtype="tinyint" precision="1" attributes="unsigned" phptype="integer" null="false" default="0" index="index" />
+        <field key="deletedon" dbtype="datetime" phptype="datetime" null="true" default="0000-00-00 00:00:00" />
+        <field key="deletedby" dbtype="int" precision="10" phptype="integer" null="false" default="0" />
+        <field key="createdby" dbtype="int" precision="10" phptype="integer" null="false" default="0" />
+        <field key="createdon" dbtype="datetime" phptype="datetime" null="true" default="0000-00-00 00:00:00" />
+        <field key="editedby" dbtype="int" precision="10" phptype="integer" null="false" default="0" />
+        <field key="editedon" dbtype="datetime" phptype="datetime" null="true" default="0000-00-00 00:00:00" />
+        <field key="introtext" dbtype="text" phptype="string" null="false" default="" />
+        <field key="fulltext" dbtype="text" phptype="string" null="false" default="" />  
+
+        <index alias="catalog" name="catalog" primary="false" unique="false" type="BTREE">
+            <column key="catalog" length="" collation="A" null="false" />
+        </index>
+        <index alias="active" name="active" primary="false" unique="false" type="BTREE">
+            <column key="active" length="" collation="A" null="false" />
+        </index>
+        <index alias="deleted" name="deleted" primary="false" unique="false" type="BTREE">
+            <column key="deleted" length="" collation="A" null="false" />
+        </index>
+         
+        <aggregate alias="Catalog" class="csCatalog" local="catalog" foreign="id" cardinality="many" owner="foreign" />
+        <aggregate alias="Answer" class="csCatalogСommentTable" local="answer_id" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="CreatedBy" class="modUser" local="createdby" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="EditedBy" class="modUser" local="editedby" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="DeletedBy" class="modUser" local="deletedby" foreign="id" cardinality="one" owner="foreign" />
+ 
+    </object> 
+          
+    <object class="csBrand" table="cybershop_brand" extends="xPDOSimpleObject">     
+        <field key="name" dbtype="varchar" precision="255" phptype="string" null="false" default="" index="index" />
+        <field key="parent" dbtype="int" precision="10" phptype="integer" null="false" default="0" index="index" />
+        <field key="isfolder" dbtype="tinyint" precision="1" attributes="unsigned" phptype="boolean" null="false" default="0" index="index" />
+        <field key="description" dbtype="varchar" precision="255" phptype="string" null="false" default=""/>
+        <field key="introtext" dbtype="text" phptype="string" null="false" default="" />
+        <field key="fulltext" dbtype="text" phptype="string" null="false" default="" />
+        <field key="image" dbtype="varchar" precision="255" phptype="string" null="false" default=""/>
+        <field key="media" dbtype="varchar" precision="255" phptype="string" null="false" default=""/>
+        <field key="url" dbtype="varchar" precision="255" phptype="string" null="false" default=""/>
+        <field key="ceo_data" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
+        <field key="ceo_key" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
+        <field key="ceo_description" dbtype="text" phptype="string" null="false" default="" />
+        <field key="properties" dbtype="text" phptype="json" null="true" />   
+        <field key="sort_position" dbtype="int" precision="10" phptype="integer" null="true" default="0" index="index" />
+        <field key="alias" dbtype="varchar" precision="255" phptype="string" null="true" default="" index="index" />
+        <field key="active" dbtype="tinyint" precision="1" phptype="integer" null="false" default="1" />
+        <field key="deleted" dbtype="tinyint" precision="1" attributes="unsigned" phptype="integer" null="false" default="0" index="index" />
+        
+        <index alias="name" name="name" primary="false" unique="false" type="BTREE">
+            <column key="name" length="" collation="A" null="false" />
+        </index>
+        <index alias="parent" name="parent" primary="false" unique="false" type="BTREE">
+            <column key="parent" length="" collation="A" null="false" />
+        </index>
+        <index alias="isfolder" name="isfolder" primary="false" unique="false" type="BTREE">
+            <column key="isfolder" length="" collation="A" null="false" />
+        </index>
+        <index alias="active" name="active" primary="false" unique="false" type="BTREE">
+            <column key="active" length="" collation="A" null="false" />
+        </index>
+        <index alias="alias" name="alias" primary="false" unique="false" type="BTREE">
+            <column key="alias" length="" collation="A" null="true" />
+        </index>
+        <index alias="deleted" name="deleted" primary="false" unique="false" type="BTREE">
+            <column key="deleted" length="" collation="A" null="false" />
+        </index>
+        <index alias="sort_position" name="sort_position" primary="false" unique="false" type="BTREE">
+            <column key="sort_position" length="" collation="A" null="false" />
+        </index>
+                       
+        <aggregate alias="Catalog" class="csCatalog" local="id" foreign="brand" cardinality="many" owner="local" />
+        <aggregate alias="Parent" class="csBrand" local="parent" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="Children" class="csBrand" local="id" foreign="parent" cardinality="many" owner="local" />
+        <composite alias="BrandTable" class="csBrandTable" local="id" foreign="brand" cardinality="many" owner="local" />        
+       
+    </object>
+    
+    <object class="csBrandTable" table="cybershop_brandtable" extends="xPDOSimpleObject">  
+        <field key="brand" dbtype="int" precision="10" phptype="integer" null="false" default="0" index="index" />
+        <field key="filter" dbtype="int" precision="10" phptype="integer" null="false" default="0" index="index" />
+         
+        <index alias="brand" name="brand" primary="false" unique="false" type="BTREE">
+            <column key="brand" length="" collation="A" null="false" />
+        </index>        
+        <index alias="filter" name="filter" primary="false" unique="false" type="BTREE">
+            <column key="filter" length="" collation="A" null="false" />
+        </index>    
+                
+        <aggregate alias="Brand" class="csBrand" local="brand" foreign="id" cardinality="many" owner="foreign" />
+        <aggregate alias="Filter" class="csFilter" local="filter" foreign="id" cardinality="many" owner="local" />
+       
+    </object>  
+    
+    <object class="csBrandPropertyTable" table="cybershop_brandpropertytable" extends="xPDOSimpleObject">  
+        <field key="brand" dbtype="int" precision="10" phptype="integer" null="false" default="0" index="index" />
+        <field key="property" dbtype="int" precision="10" phptype="integer" null="false" default="0" index="index" />
+         
+        <index alias="brand" name="brand" primary="false" unique="false" type="BTREE">
+            <column key="brand" length="" collation="A" null="false" />
+        </index>        
+        <index alias="property" name="property" primary="false" unique="false" type="BTREE">
+            <column key="property" length="" collation="A" null="false" />
+        </index> 
+                
+        <aggregate alias="Brand" class="csBrand" local="brand" foreign="id" cardinality="many" owner="foreign" />
+        <aggregate alias="Property" class="csProperty" local="property" foreign="id" cardinality="many" owner="local" />
+       
+    </object> 
+        
+    <object class="csCategory" table="cybershop_category" extends="xPDOSimpleObject">     
+        <field key="name" dbtype="varchar" precision="255" phptype="string" null="false" default="" index="index" />
+        <field key="parent" dbtype="int" precision="10" phptype="integer" null="false" default="0" index="index" />
+        <field key="isfolder" dbtype="tinyint" precision="1" attributes="unsigned" phptype="boolean" null="false" default="0" index="index" />
+        <field key="description" dbtype="varchar" precision="255" phptype="string" null="false" default=""/>
+        <field key="introtext" dbtype="text" phptype="string" null="false" default="" />
+        <field key="fulltext" dbtype="text" phptype="string" null="false" default="" />
+        <field key="media" dbtype="varchar" precision="255" phptype="string" null="false" default=""/>
+        <field key="image" dbtype="varchar" precision="255" phptype="string" null="false" default=""/>
+        <field key="url" dbtype="varchar" precision="255" phptype="string" null="false" default=""/>
+        <field key="ceo_data" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
+        <field key="ceo_key" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
+        <field key="ceo_description" dbtype="text" phptype="string" null="false" default="" />
+        <field key="properties" dbtype="text" phptype="json" null="true" />   
+        <field key="alias" dbtype="varchar" precision="255" phptype="string" null="true" default="" index="index" />
+        <field key="sort_position" dbtype="int" precision="10" phptype="integer" null="true" default="0" index="index" />
+        <field key="active" dbtype="tinyint" precision="1" phptype="integer" null="false" default="1" />
+        <field key="deleted" dbtype="tinyint" precision="1" attributes="unsigned" phptype="integer" null="false" default="0" index="index" />
+       
+        <index alias="name" name="name" primary="false" unique="false" type="BTREE">
+            <column key="name" length="" collation="A" null="false" />
+        </index>
+        <index alias="parent" name="parent" primary="false" unique="false" type="BTREE">
+            <column key="parent" length="" collation="A" null="false" />
+        </index>
+        <index alias="isfolder" name="isfolder" primary="false" unique="false" type="BTREE">
+            <column key="isfolder" length="" collation="A" null="false" />
+        </index>
+        <index alias="active" name="active" primary="false" unique="false" type="BTREE">
+            <column key="active" length="" collation="A" null="false" />
+        </index>
+        <index alias="alias" name="alias" primary="false" unique="false" type="BTREE">
+            <column key="alias" length="" collation="A" null="true" />
+        </index>
+        <index alias="deleted" name="deleted" primary="false" unique="false" type="BTREE">
+            <column key="deleted" length="" collation="A" null="false" />
+        </index>
+        <index alias="sort_position" name="sort_position" primary="false" unique="false" type="BTREE">
+            <column key="sort_position" length="" collation="A" null="false" />
+        </index>
+                               
+        <aggregate alias="Catalog" class="csCatalog" local="id" foreign="catalog" cardinality="many" owner="local" />
+        <aggregate alias="Parent" class="csCategory" local="parent" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="Children" class="csCategory" local="id" foreign="parent" cardinality="many" owner="local" />
+        <composite alias="CategoryTable" class="csCategoryTable" local="id" foreign="category" cardinality="many" owner="local" />        
+ 
+    </object>   
+
+    <object class="csCategoryTable" table="cybershop_categorytable" extends="xPDOSimpleObject">  
+        <field key="category" dbtype="int" precision="10" phptype="integer" null="false" default="0" index="index" />
+        <field key="filter" dbtype="int" precision="10" phptype="integer" null="false" default="0" index="index" />
+             
+        <index alias="category" name="category" primary="false" unique="false" type="BTREE">
+            <column key="category" length="" collation="A" null="false" />
+        </index>        
+        <index alias="filter" name="filter" primary="false" unique="false" type="BTREE">
+            <column key="filter" length="" collation="A" null="false" />
+        </index>  
+        
+        <aggregate alias="Category" class="csCategory" local="category" foreign="id" cardinality="many" owner="foreign" />
+        <aggregate alias="Filter" class="csFilter" local="filter" foreign="id" cardinality="many" owner="local" />
+    </object>    
+           
+    <object class="csCategoryPropertyTable" table="cybershop_categorypropertytable" extends="xPDOSimpleObject">  
+        <field key="category" dbtype="int" precision="10" phptype="integer" null="false" default="0" index="index" />
+        <field key="property" dbtype="int" precision="10" phptype="integer" null="false" default="0" index="index" />
+             
+        <index alias="category" name="category" primary="false" unique="false" type="BTREE">
+            <column key="category" length="" collation="A" null="false" />
+        </index>        
+        <index alias="property" name="property" primary="false" unique="false" type="BTREE">
+            <column key="property" length="" collation="A" null="false" />
+        </index>         
+        
+        <aggregate alias="Category" class="csCategory" local="category" foreign="id" cardinality="many" owner="foreign" />
+        <aggregate alias="Property" class="csProperty" local="property" foreign="id" cardinality="many" owner="local" />
+    </object> 
+    
+    <object class="csFilter" table="cybershop_filter" extends="xPDOSimpleObject">   
+        <field key="name" dbtype="varchar" precision="255" phptype="string" null="false" default="" index="index" />
+        <field key="parent" dbtype="int" precision="10" phptype="integer" null="false" default="0" index="index" />
+        <field key="isfolder" dbtype="tinyint" precision="1" attributes="unsigned" phptype="boolean" null="false" default="0" index="index" />
+        <field key="description" dbtype="varchar" precision="255" phptype="string" null="false" default=""/>
+        <field key="introtext" dbtype="text" phptype="string" null="false" default="" />
+        <field key="fulltext" dbtype="text" phptype="string" null="false" default="" />
+        <field key="image" dbtype="varchar" precision="255" phptype="string" null="false" default=""/>
+        <field key="ceo_data" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
+        <field key="ceo_key" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
+        <field key="ceo_description" dbtype="text" phptype="string" null="false" default="" />
+        <field key="type" dbtype="tinyint" precision="10" phptype="integer" null="false" default="1" />
+        <field key="properties" dbtype="text" phptype="json" null="true" />   
+        <field key="sort_position" dbtype="int" precision="10" phptype="integer" null="true" default="0" index="index" />
+        <field key="active" dbtype="tinyint" precision="1" phptype="integer" null="false" default="1" />
+        <field key="deleted" dbtype="tinyint" precision="1" attributes="unsigned" phptype="integer" null="false" default="0" index="index" />
+        
+        <index alias="name" name="name" primary="false" unique="false" type="BTREE">
+            <column key="name" length="" collation="A" null="false" />
+        </index>
+        <index alias="parent" name="parent" primary="false" unique="false" type="BTREE">
+            <column key="parent" length="" collation="A" null="false" />
+        </index>
+        <index alias="isfolder" name="isfolder" primary="false" unique="false" type="BTREE">
+            <column key="isfolder" length="" collation="A" null="false" />
+        </index>        
+        <index alias="active" name="active" primary="false" unique="false" type="BTREE">
+            <column key="active" length="" collation="A" null="false" />
+        </index>
+        <index alias="deleted" name="deleted" primary="false" unique="false" type="BTREE">
+            <column key="deleted" length="" collation="A" null="false" />
+        </index>
+        <index alias="sort_position" name="sort_position" primary="false" unique="false" type="BTREE">
+            <column key="sort_position" length="" collation="A" null="false" />
+        </index>
+                        
+        <composite alias="BrandTable" class="csBrandTable" local="id" foreign="filter" cardinality="one" owner="foreign" />
+        <aggregate alias="Parent" class="csFilter" local="parent" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="Children" class="csFilter" local="id" foreign="parent" cardinality="many" owner="local" />
+        <composite alias="CategoryTable" class="csCategoryTable" local="id" foreign="filter" cardinality="one" owner="foreign" />
+        <composite alias="FilterTable" class="csFilterTable" local="id" foreign="filter" cardinality="many" owner="local" />        
+    </object>
+    
+    <object class="csFilterItem" table="cybershop_filteritem" extends="xPDOSimpleObject">   
+        <field key="filter" dbtype="int" precision="10" phptype="integer" null="false" default="0" index="index" />
+        <field key="name" dbtype="varchar" precision="255" phptype="string" null="false" default="" index="index" />
+        <field key="description" dbtype="text" phptype="string" null="true" />
+        <field key="image" dbtype="varchar" precision="255" phptype="string" null="true" />
+        <field key="properties" dbtype="text" phptype="json" null="true" />   
+        <field key="sort_position" dbtype="int" precision="10" phptype="integer" null="true" default="0" index="index" />
+        <field key="active" dbtype="tinyint" precision="1" attributes="unsigned" phptype="integer" null="false" default="1" index="index" />
+        <field key="deleted" dbtype="tinyint" precision="1" attributes="unsigned" phptype="integer" null="false" default="0" index="index" />
+       
+        <index alias="filter" name="filter" primary="false" unique="false" type="BTREE">
+            <column key="filter" length="" collation="A" null="false" />
+        </index>        
+        <index alias="name" name="name" primary="false" unique="false" type="BTREE">
+            <column key="name" length="" collation="A" null="false" />
+        </index>    
+        <index alias="sort_position" name="sort_position" primary="false" unique="false" type="BTREE">
+            <column key="sort_position" length="" collation="A" null="false" />
+        </index>
+        <index alias="active" name="active" primary="false" unique="false" type="BTREE">
+            <column key="active" length="" collation="A" null="false" />
+        </index>
+        <index alias="deleted" name="deleted" primary="false" unique="false" type="BTREE">
+            <column key="deleted" length="" collation="A" null="false" />
+        </index>
+                        
+        <aggregate alias="Filter" class="csFilter" local="filter" foreign="id" cardinality="many" owner="foreign" />
+        <aggregate alias="CatalogFilterTable" class="csCatalogFilterTable" local="id" foreign="filteritem" cardinality="many" owner="foreign" />
+
+    </object>    
+     
+    <object class="csProperty" table="cybershop_property" extends="xPDOSimpleObject">   
+        <field key="name" dbtype="varchar" precision="255" phptype="string" null="false" default="" index="index" />
+        <field key="description" dbtype="varchar" precision="255" phptype="string" null="false" default=""/>
+        <field key="shortname" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="introtext" dbtype="text" phptype="string" null="false" default="" />
+        <field key="fulltext" dbtype="text" phptype="string" null="false" default="" />
+        <field key="image" dbtype="varchar" precision="255" phptype="string" null="false" default=""/>
+        <field key="ceo_data" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
+        <field key="ceo_key" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
+        <field key="ceo_description" dbtype="text" phptype="string" null="false" default="" />
+        <field key="properties" dbtype="text" phptype="json" null="true" />   
+        <field key="sort_position" dbtype="int" precision="10" phptype="integer" null="true" default="0" index="index" />
+        <field key="xtype" dbtype="varchar" precision="75" phptype="string" null="false" default="textfield" />
+        <field key="active" dbtype="tinyint" precision="1" phptype="integer" null="false" default="1" />
+        <field key="deleted" dbtype="tinyint" precision="1" attributes="unsigned" phptype="integer" null="false" default="0" index="index" />
+        
+        <index alias="name" name="name" primary="false" unique="false" type="BTREE">
+            <column key="name" length="" collation="A" null="false" />
+        </index>
+        <index alias="active" name="active" primary="false" unique="false" type="BTREE">
+            <column key="active" length="" collation="A" null="false" />
+        </index>
+        <index alias="deleted" name="deleted" primary="false" unique="false" type="BTREE">
+            <column key="deleted" length="" collation="A" null="false" />
+        </index>
+        <index alias="sort_position" name="sort_position" primary="false" unique="false" type="BTREE">
+            <column key="sort_position" length="" collation="A" null="false" />
+        </index>
+                        
+        <composite alias="PropertyTable" class="csCatalogPropertyTable" local="id" foreign="property" cardinality="many" owner="local" />        
+    </object>
+    
+    <object class="csCatalogIndexWords" table="cybershop_catalog_index_words" extends="xPDOSimpleObject">
+        <field key="word" dbtype="varchar" precision="32" phptype="string" null="false" />
+        <field key="resource" dbtype="integer" precision="10" phptype="integer" attributes="unsigned" null="false" />
+        <field key="weight" dbtype="integer" precision="10" phptype="integer" attributes="unsigned" null="false" />
+
+        <index alias="word" name="word" primary="true" unique="true" type="BTREE">
+            <column key="word" length="" collation="A" null="false" />
+            <column key="resource" length="" collation="A" null="false" />
+        </index>
+
+        <aggregate alias="Resource" class="csCatalog" local="resource" foreign="id" owner="foreign" cardinality="one" />
+    </object>
+    
+    <object class="csStore" table="cybershop_store" extends="xPDOSimpleObject">   
+        <field key="name" dbtype="varchar" precision="255" phptype="string" null="false" default="" index="index" />
+        <field key="description" dbtype="varchar" precision="255" phptype="string" null="false" default=""/>
+        <field key="shortname" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="introtext" dbtype="text" phptype="string" null="false" default="" />
+        <field key="fulltext" dbtype="text" phptype="string" null="false" default="" />
+        <field key="image" dbtype="varchar" precision="255" phptype="string" null="false" default=""/>
+        <field key="ceo_data" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
+        <field key="ceo_key" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
+        <field key="ceo_description" dbtype="text" phptype="string" null="false" default="" />
+        <field key="properties" dbtype="text" phptype="json" null="true" />   
+        <field key="sort_position" dbtype="int" precision="10" phptype="integer" null="true" default="0" index="index" />
+        <field key="active" dbtype="tinyint" precision="1" phptype="integer" null="false" default="1" />
+        <field key="deleted" dbtype="tinyint" precision="1" attributes="unsigned" phptype="integer" null="false" default="0" index="index" />
+        
+        <index alias="name" name="name" primary="false" unique="false" type="BTREE">
+            <column key="name" length="" collation="A" null="false" />
+        </index>
+        <index alias="active" name="active" primary="false" unique="false" type="BTREE">
+            <column key="active" length="" collation="A" null="false" />
+        </index>
+        <index alias="deleted" name="deleted" primary="false" unique="false" type="BTREE">
+            <column key="deleted" length="" collation="A" null="false" />
+        </index>
+        <index alias="sort_position" name="sort_position" primary="false" unique="false" type="BTREE">
+            <column key="sort_position" length="" collation="A" null="false" />
+        </index>
+                        
+        <composite alias="StoreTable" class="csCatalogStoreTable" local="id" foreign="store" cardinality="many" owner="local" />        
+    </object>
+         
+    <object class="csDelivery" table="cybershop_deliveries" extends="xPDOSimpleObject">
+        <field key="name" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="description" dbtype="text" phptype="string" null="true" />
+        <field key="price" dbtype="decimal" precision="12,2" phptype="float" null="false" default="0" />
+        <field key="weight_price" dbtype="decimal" precision="12,2" phptype="float" null="false" default="0" />
+        <field key="distance_price" dbtype="decimal" precision="12,2" phptype="float" null="false" default="0" />
+        <field key="image" dbtype="varchar" precision="255" phptype="string" null="true" />
+        <field key="rank" dbtype="tinyint" precision="1" attributes="unsigned" phptype="integer" null="false" default="0" />
+        <field key="class" dbtype="varchar" precision="50" phptype="string" null="true" />
+        <field key="properties" dbtype="text" phptype="json" null="true" />
+        <field key="requires" dbtype="varchar" precision="255" phptype="string" null="true" default="email,receiver" />
+        <field key="sort_position" dbtype="int" precision="10" phptype="integer" null="true" default="0" index="index" />
+        <field key="active" dbtype="tinyint" precision="1" phptype="integer" null="false" default="1" index="index" />
+        <field key="deleted" dbtype="tinyint" precision="1" attributes="unsigned" phptype="integer" null="false" default="0" index="index" />
+
+        <index alias="sort_position" name="sort_position" primary="false" unique="false" type="BTREE">
+            <column key="sort_position" length="" collation="A" null="false" />
+        </index>
+        <index alias="active" name="active" primary="false" unique="false" type="BTREE">
+            <column key="active" length="" collation="A" null="false" />
+        </index>
+        <index alias="deleted" name="deleted" primary="false" unique="false" type="BTREE">
+            <column key="deleted" length="" collation="A" null="false" />
+        </index>
+                        
+        <aggregate alias="Orders" class="csOrder" local="id" foreign="delivery" cardinality="many" owner="local" />
+        <aggregate alias="Payments" class="csDeliveryMember" local="id" foreign="delivery_id" cardinality="many" owner="local" />
+    </object>
+
+
+    <object class="csPayment" table="cybershop_payments" extends="xPDOSimpleObject">
+        <field key="name" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="description" dbtype="text" phptype="string" null="true" />
+        <field key="image" dbtype="varchar" precision="255" phptype="string" null="true" />
+        <field key="rank" dbtype="tinyint" precision="1" attributes="unsigned" phptype="integer" null="false" default="0" />
+        <field key="class" dbtype="varchar" precision="50" phptype="string" null="true" />
+        <field key="properties" dbtype="text" phptype="json" null="true" />
+        <field key="sort_position" dbtype="int" precision="10" phptype="integer" null="true" default="0" index="index" />
+        <field key="active" dbtype="tinyint" precision="1" attributes="unsigned" phptype="integer" null="false" default="1" index="index"/>
+        <field key="deleted" dbtype="tinyint" precision="1" attributes="unsigned" phptype="integer" null="false" default="0" index="index" />
+        
+        <index alias="sort_position" name="sort_position" primary="false" unique="false" type="BTREE">
+            <column key="sort_position" length="" collation="A" null="false" />
+        </index>
+        <index alias="active" name="active" primary="false" unique="false" type="BTREE">
+            <column key="active" length="" collation="A" null="false" />
+        </index>
+        <index alias="deleted" name="deleted" primary="false" unique="false" type="BTREE">
+            <column key="deleted" length="" collation="A" null="false" />
+        </index>
+               
+        <aggregate alias="Orders" class="csOrder" local="id" foreign="payment" cardinality="many" owner="local" />
+        <aggregate alias="Deliveries" class="csDeliveryMember" local="id" foreign="payment_id" cardinality="many" owner="local" />
+    </object>
+
+    <object class="csCurrency" table="cybershop_currency" extends="xPDOSimpleObject">
+        <field key="name" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="shortname" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="description" dbtype="text" phptype="string" null="true" />
+        <field key="rate" dbtype="decimal" precision="12,5" phptype="float" null="false" default="0" />
+        <field key="image" dbtype="varchar" precision="255" phptype="string" null="true" />
+        <field key="main" dbtype="tinyint" precision="1" attributes="unsigned" phptype="integer" null="false" default="0" />
+        <field key="properties" dbtype="text" phptype="json" null="true" />   
+        <field key="sort_position" dbtype="int" precision="10" phptype="integer" null="true" default="0" index="index" />
+        <field key="active" dbtype="tinyint" precision="1" attributes="unsigned" phptype="integer" null="false" default="1" index="index" />
+        <field key="deleted" dbtype="tinyint" precision="1" attributes="unsigned" phptype="integer" null="false" default="0" index="index" />
+        
+        <index alias="active" name="active" primary="false" unique="false" type="BTREE">
+            <column key="active" length="" collation="A" null="false" />
+        </index>
+        <index alias="deleted" name="deleted" primary="false" unique="false" type="BTREE">
+            <column key="deleted" length="" collation="A" null="false" />
+        </index>
+        
+        <index alias="sort_position" name="sort_position" primary="false" unique="false" type="BTREE">
+            <column key="sort_position" length="" collation="A" null="false" />
+        </index>
+                
+    </object>
+
+    <object class="csOrder" table="cybershop_orders" extends="xPDOSimpleObject">
+        <field key="user_id" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="false" />
+        <field key="status" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="false" default="0" />
+        <field key="delivery" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="false" default="0" />
+        <field key="payment" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="false" default="0" />
+        <field key="address" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="false" default="0" />
+        <field key="createdon" dbtype="datetime" phptype="datetime" null="true" default="0000-00-00 00:00:00" />
+        <field key="updatedon" dbtype="datetime" phptype="datetime" null="true" default="0000-00-00 00:00:00" />
+        <field key="num" dbtype="varchar" precision="20" phptype="string" null="true" />
+        <field key="cost" dbtype="decimal" precision="12,2" phptype="float" null="false" default="0" />
+        <field key="cart_cost" dbtype="decimal" precision="12,2" phptype="float" null="false" default="0" />
+        <field key="delivery_cost" dbtype="decimal" precision="12,2" phptype="float" null="false" default="0" />
+        <field key="weight" dbtype="decimal" precision="13,3" phptype="float" null="false" default="0" />
+        <field key="context" dbtype="varchar" precision="100" phptype="string" null="false" default="web" />
+        <field key="comment" dbtype="text" phptype="string" null="true" />
+        <field key="properties" dbtype="text" phptype="json" null="true" />
+
+        <index alias="user_id" name="user_id" primary="false" unique="false" type="BTREE" >
+            <column key="user_id" length="" collation="A" null="false" />
+        </index>
+        <index alias="status" name="status" primary="false" unique="false" type="BTREE" >
+            <column key="status" length="" collation="A" null="false" />
+        </index>
+
+        <aggregate alias="User" class="modUser" local="user_id" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="UserProfile" class="modUserProfile" local="user_id" foreign="internalKey" owner="foreign" cardinality="one" />
+        <aggregate alias="Status" class="csOrderStatus" local="status" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="Delivery" class="csDelivery" local="delivery" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="Payment" class="csPayment" local="payment" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="Address" class="csOrderAddress" local="address" foreign="id" cardinality="one" owner="foreign" />
+        <composite alias="Products" class="csOrderProduct" local="id" foreign="order_id" cardinality="many" owner="local" />
+        <composite alias="Log" class="csOrderLog" local="id" foreign="order_id" cardinality="many" owner="local" />
+    </object>
+
+
+    <object class="csOrderStatus" table="cybershop_order_statuses" extends="xPDOSimpleObject">
+        <field key="name" dbtype="varchar" precision="100" phptype="string" null="false" />
+        <field key="description" dbtype="text" phptype="string" null="true" />
+        <field key="color" dbtype="char" precision="6" phptype="string" null="false" default="000000" />
+        <field key="email_user" dbtype="tinyint" precision="1" phptype="integer" null="false" default="0" />
+        <field key="email_manager" dbtype="tinyint" precision="1" phptype="integer" null="false" default="0" />
+        <field key="subject_user" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="subject_manager" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="body_user" dbtype="int" precision="10" phptype="integer" null="true" default="0" />
+        <field key="body_manager" dbtype="int" precision="10" phptype="integer" null="true" default="0" />
+        <field key="active" dbtype="tinyint" precision="1" phptype="integer" null="false" default="1" />
+        <field key="final" dbtype="tinyint" precision="1" phptype="integer" null="false" default="0" />
+        <field key="fixed" dbtype="tinyint" precision="1" phptype="integer" null="false" default="0" />
+        <field key="rank" dbtype="tinyint" precision="1" phptype="integer" attributes="unsigned" null="false" default="0" />
+        <field key="editable" dbtype="tinyint" precision="1" phptype="integer" null="false" default="1" />
+
+        <index alias="active" name="active" primary="false" unique="false" type="BTREE" >
+            <column key="active" length="" collation="A" null="false" />
+        </index>
+
+        <aggregate alias="Orders" class="csOrder" local="id" foreign="status" cardinality="many" owner="local" />
+    </object>
+
+
+    <object class="csOrderLog" table="cybershop_order_logs" extends="xPDOSimpleObject">
+        <field key="user_id" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="false" default="0" />
+        <field key="order_id" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="false" default="0" />
+        <field key="timestamp" dbtype="datetime" phptype="datetime" null="true" default="0000-00-00 00:00:00" />
+        <field key="action" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="entry" dbtype="varchar" precision="255" phptype="string" null="false" default="0" />
+        <field key="ip" dbtype="text" phptype="json" null="false" />
+
+        <index alias="user_id" name="user_id" primary="false" unique="false" type="BTREE" >
+            <column key="user_id" length="" collation="A" null="false" />
+        </index>
+        <index alias="order_id" name="order_id" primary="false" unique="false" type="BTREE" >
+            <column key="order_id" length="" collation="A" null="false" />
+        </index>
+
+        <aggregate alias="User" class="modUser" local="user_id" foreign="id" owner="foreign" cardinality="one" />
+        <aggregate alias="UserProfile" class="modUserProfile" local="user_id" foreign="internalKey" owner="foreign" cardinality="one" />
+        <aggregate alias="Order" class="csOrder" local="order_id" foreign="id" owner="foreign" cardinality="one" />
+    </object>
+
+
+    <object class="csOrderAddress" table="cybershop_order_addresses" extends="xPDOSimpleObject">
+        <field key="user_id" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="false" />
+        <field key="createdon" dbtype="datetime" phptype="datetime" null="true" default="0000-00-00 00:00:00" />
+        <field key="updatedon" dbtype="datetime" phptype="datetime" null="true" default="0000-00-00 00:00:00" />
+        <field key="receiver" dbtype="varchar" precision="255" phptype="string" null="true" />
+        <field key="phone" dbtype="varchar" precision="20" phptype="string" null="true" />
+        <field key="country" dbtype="varchar" precision="100" phptype="string" null="true" />
+        <field key="index" dbtype="varchar" precision="50" phptype="integer" null="true" />
+        <field key="region" dbtype="varchar" precision="100" phptype="string" null="true" />
+        <field key="city" dbtype="varchar" precision="100" phptype="string" null="true" />
+        <field key="metro" dbtype="varchar" precision="255" phptype="string" null="true" />
+        <field key="street" dbtype="varchar" precision="255" phptype="string" null="true" />
+        <field key="building" dbtype="varchar" precision="10" phptype="string" null="true" />
+        <field key="room" dbtype="varchar" precision="10" phptype="string" null="true" />
+        <field key="comment" dbtype="text" phptype="string" null="true" />
+        <field key="properties" dbtype="text" phptype="json" null="true" />
+
+        <index alias="user_id" name="user_id" primary="false" unique="false" type="BTREE" >
+            <column key="user_id" length="" collation="A" null="false" />
+        </index>
+
+        <aggregate alias="User" class="modUser" local="user_id" foreign="id" owner="foreign" cardinality="one" />
+        <aggregate alias="UserProfile" class="modUserProfile" local="user_id" foreign="internalKey" owner="foreign" cardinality="one" />
+    </object>
+
+
+    <object class="csOrderProduct" table="cybershop_order_products" extends="xPDOSimpleObject">
+        <field key="product_id" dbtype="int" precision="10" phptype="integer" attributes="unsigned" null="false" />
+        <field key="order_id" dbtype="int" precision="10" phptype="integer" attributes="unsigned" null="false" />
+        <field key="complect_id" dbtype="int" precision="10" phptype="integer" attributes="unsigned" null="false" />
+        <field key="count" dbtype="int" precision="10" phptype="integer" attributes="unsigned" null="false" default="1" />
+        <field key="price" dbtype="decimal" precision="12,2" phptype="float" null="false" default="0" />
+        <field key="weight" dbtype="decimal" precision="13,3" phptype="float" null="false" default="0" />
+        <field key="cost" dbtype="decimal" precision="12,2" phptype="float" null="false" default="0" />
+        <field key="options" dbtype="text" phptype="json" null="true" />
+
+        <index alias="product_id" name="product_id" primary="false" unique="false" type="BTREE" >
+            <column key="product_id" length="" collation="A" null="false" />
+        </index>
+        <index alias="order_id" name="order_id" primary="false" unique="false" type="BTREE" >
+            <column key="order_id" length="" collation="A" null="false" />
+        </index>
+
+        <aggregate alias="Product" class="csCatalog" local="product_id" foreign="id" owner="foreign" cardinality="one" />
+        <aggregate alias="Order" class="csOrder" local="order_id" foreign="id" owner="foreign" cardinality="one" />
+        <aggregate alias="Complect" class="csCatalogComplectTable" local="complect_id" foreign="id" owner="foreign" cardinality="one" />
+    </object>
+ 
+</model>
