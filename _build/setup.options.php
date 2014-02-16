@@ -1,7 +1,9 @@
 <?php
+
 /**
  * Build the setup options form.
  */
+ 
 $exists = false;
 $output = null;
 switch ($options[xPDOTransport::PACKAGE_ACTION]) {
@@ -14,4 +16,5 @@ switch ($options[xPDOTransport::PACKAGE_ACTION]) {
 
 	case xPDOTransport::ACTION_UNINSTALL: break;
 }
+
 return $output;
