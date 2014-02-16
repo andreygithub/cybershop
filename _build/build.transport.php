@@ -244,10 +244,10 @@ $vehicle->resolve('file',array(
 ));
 $vehicle->resolve('file',array(
 	'source' => $sources['source_upload'],
-	'target' => "return 'upload/';",
+	'target' => "return MODX_BASE_PATH . 'upload/';",
 ));
 
-$resolvers = array('catalog','tables','policy','sources','settings','setup',);
+$resolvers = array('tables','policy','sources','settings','setup','catalog');
 foreach ($resolvers as $resolver) {
 	if ($vehicle->resolve('php', array('source' => $sources['resolvers'] . 'resolve.'.$resolver.'.php'))) {
 		$modx->log(modX::LOG_LEVEL_INFO,'Added resolver "'.$resolver.'" to category.');
