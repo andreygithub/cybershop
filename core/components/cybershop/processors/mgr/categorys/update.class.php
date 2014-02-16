@@ -8,7 +8,6 @@ class csUpdateProcessor extends modObjectUpdateProcessor {
     public $languageTopics = array('cybershop:default');
     public $objectType = 'cs_element';
     public $permission = 'edit_document';
-    public $cybershop;
     
     public function beforeSave() {
         $bool = $this->getProperty('isfolder') == 'true' ? 1 : 0; 
@@ -20,7 +19,7 @@ class csUpdateProcessor extends modObjectUpdateProcessor {
         if ($this->getProperty('clearCache',true)) {
             $this->modx->cacheManager->refresh();
         }
-        $this->cybershop->flushCache();
+        $this->modx->cybershop->flushCache();
     }
 }
 return 'csUpdateProcessor';

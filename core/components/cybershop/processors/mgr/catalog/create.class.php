@@ -8,7 +8,6 @@ class csCreateProcessor extends modObjectCreateProcessor {
     public $languageTopics = array('cybershop:default');
     public $objectType = 'cs_element';
     public $permission = 'new_document';
-    public $cybershop;
     
     public function beforeSave() {
 
@@ -34,7 +33,7 @@ class csCreateProcessor extends modObjectCreateProcessor {
         if (!mkdir($base_path.$catalog_media_path.'catalog/'.$object_id, 0777, true)) {
             return false; 
         }
-        $this->cybershop->flushCache();
+        $this->modx->cybershop->flushCache();
         return parent::afterSave();
     }
 }

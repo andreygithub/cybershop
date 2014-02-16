@@ -27,6 +27,7 @@
         <field key="value2" dbtype="decimal" precision="12,3" phptype="float" null="false" default="0" />
         <field key="value3" dbtype="decimal" precision="12,3" phptype="float" null="false" default="0" />
         <field key="alias" dbtype="varchar" precision="255" phptype="string" null="true" default="" index="index" />
+        <field key="uri" dbtype="text" phptype="string" null="true" index="index" />
         <field key="createdby" dbtype="int" precision="10" phptype="integer" null="false" default="0" />
         <field key="createdon" dbtype="datetime" phptype="datetime" null="true" default="0000-00-00 00:00:00" />
         <field key="editedby" dbtype="int" precision="10" phptype="integer" null="false" default="0" />
@@ -73,6 +74,9 @@
         </index>
         <index alias="alias" name="alias" primary="false" unique="false" type="BTREE">
             <column key="alias" length="" collation="A" null="true" />
+        </index>
+        <index alias="uri" name="uri" primary="false" unique="false" type="BTREE">
+            <column key="uri" length="333" collation="A" null="true" />
         </index>
         <index alias="name" name="name" primary="false" unique="false" type="BTREE">
             <column key="name" length="" collation="A" null="false" />
