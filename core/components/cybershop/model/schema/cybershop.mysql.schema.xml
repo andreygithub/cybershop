@@ -276,6 +276,7 @@
         <field key="properties" dbtype="text" phptype="json" null="true" />   
         <field key="sort_position" dbtype="int" precision="10" phptype="integer" null="true" default="0" index="index" />
         <field key="alias" dbtype="varchar" precision="255" phptype="string" null="true" default="" index="index" />
+        <field key="uri" dbtype="text" phptype="string" null="true" index="index" />
         <field key="active" dbtype="tinyint" precision="1" phptype="integer" null="false" default="1" />
         <field key="deleted" dbtype="tinyint" precision="1" attributes="unsigned" phptype="integer" null="false" default="0" index="index" />
         
@@ -293,6 +294,9 @@
         </index>
         <index alias="alias" name="alias" primary="false" unique="false" type="BTREE">
             <column key="alias" length="" collation="A" null="true" />
+        </index>
+        <index alias="uri" name="uri" primary="false" unique="false" type="BTREE">
+            <column key="uri" length="333" collation="A" null="true" />
         </index>
         <index alias="deleted" name="deleted" primary="false" unique="false" type="BTREE">
             <column key="deleted" length="" collation="A" null="false" />
@@ -355,6 +359,7 @@
         <field key="ceo_description" dbtype="text" phptype="string" null="false" default="" />
         <field key="properties" dbtype="text" phptype="json" null="true" />   
         <field key="alias" dbtype="varchar" precision="255" phptype="string" null="true" default="" index="index" />
+        <field key="uri" dbtype="text" phptype="string" null="true" index="index" />
         <field key="sort_position" dbtype="int" precision="10" phptype="integer" null="true" default="0" index="index" />
         <field key="active" dbtype="tinyint" precision="1" phptype="integer" null="false" default="1" />
         <field key="deleted" dbtype="tinyint" precision="1" attributes="unsigned" phptype="integer" null="false" default="0" index="index" />
@@ -374,6 +379,9 @@
         <index alias="alias" name="alias" primary="false" unique="false" type="BTREE">
             <column key="alias" length="" collation="A" null="true" />
         </index>
+        <index alias="uri" name="uri" primary="false" unique="false" type="BTREE">
+            <column key="uri" length="333" collation="A" null="true" />
+        </index>        
         <index alias="deleted" name="deleted" primary="false" unique="false" type="BTREE">
             <column key="deleted" length="" collation="A" null="false" />
         </index>

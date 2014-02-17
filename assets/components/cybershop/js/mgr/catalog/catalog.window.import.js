@@ -6,7 +6,7 @@ Cybershop.window.catalog_import = function(config) {
         ,title: 'Импорт файлов'
         ,width: 600
         ,labelAlign: 'top'
-        ,labelWidth: 180
+        ,labelWidth: 180              
         ,fields:
         [{  
             id: 'cs-import-file'

@@ -18,6 +18,8 @@ class csCreateProcessor extends modObjectCreateProcessor {
         }
         $this->object->set('createdby', $this->modx->user->get('id'));
    	$this->object->set('createdon', time());
+        $this->object->set('editedby', $this->modx->user->get('id'));
+   	$this->object->set('editedon', time());
         return parent::beforeSave();
     }
     

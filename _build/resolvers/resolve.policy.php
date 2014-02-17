@@ -28,7 +28,7 @@ if ($object->xpdo) {
 						'target' => 'mgr'
 						,'principal_class' => 'modUserGroup'
 						,'principal' => $adminGroup->get('id')
-						,'authority' => 9999
+						,'authority' => 0
 						,'policy' => $policy->get('id')
 					);
 					if (!$modx->getObject('modAccessContext', $properties)) {

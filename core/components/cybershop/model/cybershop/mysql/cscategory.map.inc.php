@@ -20,6 +20,7 @@ $xpdo_meta_map['csCategory']= array (
     'ceo_description' => '',
     'properties' => NULL,
     'alias' => '',
+    'uri' => NULL,
     'sort_position' => 0,
     'active' => 1,
     'deleted' => 0,
@@ -138,6 +139,13 @@ $xpdo_meta_map['csCategory']= array (
       'default' => '',
       'index' => 'index',
     ),
+    'uri' => 
+    array (
+      'dbtype' => 'text',
+      'phptype' => 'string',
+      'null' => true,
+      'index' => 'index',
+    ),
     'sort_position' => 
     array (
       'dbtype' => 'int',
@@ -243,6 +251,22 @@ $xpdo_meta_map['csCategory']= array (
         'alias' => 
         array (
           'length' => '',
+          'collation' => 'A',
+          'null' => true,
+        ),
+      ),
+    ),
+    'uri' => 
+    array (
+      'alias' => 'uri',
+      'primary' => false,
+      'unique' => false,
+      'type' => 'BTREE',
+      'columns' => 
+      array (
+        'uri' => 
+        array (
+          'length' => '333',
           'collation' => 'A',
           'null' => true,
         ),

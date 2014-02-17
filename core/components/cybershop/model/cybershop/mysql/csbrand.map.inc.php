@@ -21,6 +21,7 @@ $xpdo_meta_map['csBrand']= array (
     'properties' => NULL,
     'sort_position' => 0,
     'alias' => '',
+    'uri' => NULL,
     'active' => 1,
     'deleted' => 0,
   ),
@@ -147,6 +148,13 @@ $xpdo_meta_map['csBrand']= array (
       'default' => '',
       'index' => 'index',
     ),
+    'uri' => 
+    array (
+      'dbtype' => 'text',
+      'phptype' => 'string',
+      'null' => true,
+      'index' => 'index',
+    ),
     'active' => 
     array (
       'dbtype' => 'tinyint',
@@ -243,6 +251,22 @@ $xpdo_meta_map['csBrand']= array (
         'alias' => 
         array (
           'length' => '',
+          'collation' => 'A',
+          'null' => true,
+        ),
+      ),
+    ),
+    'uri' => 
+    array (
+      'alias' => 'uri',
+      'primary' => false,
+      'unique' => false,
+      'type' => 'BTREE',
+      'columns' => 
+      array (
+        'uri' => 
+        array (
+          'length' => '333',
           'collation' => 'A',
           'null' => true,
         ),
