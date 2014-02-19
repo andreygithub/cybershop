@@ -75,7 +75,7 @@ if (!($cs instanceof Cybershop)) { die('Error'); }
          ,'introtext' => $element['name_ru']
          ,'fulltext' => $element['description_ru']
          ,'active' => true
-         ,'brand' => tablebrand($element['brend_id'])
+         ,'brand' => tablebrand($element['brand_id'])
          ,'category' => tablecategory($element['type_id'])
          );
     $newElement = $cs->modx->newObject('csCatalog');

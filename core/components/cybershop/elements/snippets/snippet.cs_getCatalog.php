@@ -4,7 +4,7 @@
  * Snippet get data from catalog table
  */
 
-$cs = $modx->getService('cybershop','Cybershop',$modx->getOption('cybershop.core_path',null,$modx->getOption('core_path').'components/cybershop/').'model/cybershop/',$scriptProperties);
+$cs = $modx->getService('cybershop','Cybershop',$modx->getOption('cybershop.core_path',null,MODX_CORE_PATH.'components/cybershop/').'model/cybershop/',$scriptProperties);
 if (!($cs instanceof Cybershop)) { die('Error'); }
 
 $params['tpl'] = $modx->getOption('tpl',$scriptProperties,'cs_tpl_catalog_element');

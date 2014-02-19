@@ -14,7 +14,7 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) &&  $_SERVER['HTTP_X_REQUESTED_WITH
     $params['filter_dir'] = 'ASC';
     $params['max_paginetion_elements'] = 10;
     
-    $params['categorysgroup']   = isset($_POST['categorysgroup']) ?  $_POST['categorysgroup'] : 0;
+    $params['categorysgroup']   = filter_input(INPUT_POST, 'categorysgroup') ?  filter_input(INPUT_POST, 'categorysgroup') : 0;
     $params['categorys']        = isset($_POST['categorys']) ?  explode(",",$_POST['categorys']) : '';
     $params['brands']           = isset($_POST['brands']) ?  explode(",",$_POST['brands']) : '';
     $params['filters']          = isset($_POST['filters']) ?  explode(",",$_POST['filters']) : '';
@@ -65,8 +65,13 @@ cybershop.catalog.initialize();});
 ');
 $params = array();
 
-$params['tpl_catalog_main'] = $modx->getOption('tpl_catalog_main',$scriptProperties,'cs_tpl_catalog_main');
-$params['tpl_catalog_element'] = $modx->getOption('tpl_catalog_element',$scriptProperties,'cs_tpl_catalog_element');
+$params['tpl_main'] = $modx->getOption('tpl_main',$scriptProperties,'');
+$params['tpl_elements'] = explode(',', $modx->getOption('tpl_element',$scriptProperties,'cs_tpl_catalog_row_gallery,cs_tpl_catalog_row_list'));
+
+$params['tpl_view_element'] = $modx->getOption('tpl_view_element',$scriptProperties,'cs_tpl_catalog_select_view');
+$params['tpl_sort_element'] = $modx->getOption('tpl_sort_element',$scriptProperties,'cs_tpl_catalog_select');
+$params['tpl_show_element'] = $modx->getOption('tpl_show_element',$scriptProperties,'cs_tpl_catalog_select');
+
 $params['tpl_pagination_element_main'] = $modx->getOption('tpl_pagination_element_main',$scriptProperties,'cs_tpl_pagination_element_main');
 $params['tpl_pagination_element_active'] = $modx->getOption('tpl_pagination_element_active',$scriptProperties,'cs_tpl_pagination_element_active');
 $params['tpl_pagination_element_leftoffset'] = $modx->getOption('tpl_pagination_element_leftoffset',$scriptProperties,'cs_tpl_pagination_element_leftoffset');
@@ -75,19 +80,22 @@ $params['tpl_pagination_element_rightoffset'] = $modx->getOption('tpl_pagination
 $params['tpl_pagination_element_rightoffset_disabled'] = $modx->getOption('tpl_pagination_element_rightoffset_disabled',$scriptProperties,'cs_tpl_pagination_element_rightoffset_disabled');
 
 $params['namespace'] = 'catalog.';
-$params['use_pagination'] = $modx->getOption('use_pagination',$scriptProperties,true);
 $params['max_paginetion_elements'] = 10;
 
-$params['categorysgroup'] = isset($_GET['categorysgroup']) ?  $cs->getIdFromURL($_GET['categorysgroup'], 'csCategory') : $modx->getOption('categorysgroup', $scriptProperties, $modx->getOption('cybershop.catalog_categorysgroup'));
-$params['brands']           = isset($_GET['brands']) ?  explode(",",$_GET['brands']) : $modx->getOption('brands',$scriptProperties,$modx->getOption('cybershop.catalog_brands'));
-$params['filters']          = isset($_GET['filters']) ?  explode(",",$_GET['filters']) : $modx->getOption('filters',$scriptProperties,$modx->getOption('cybershop.catalog_filters'));
-$params['pricemin']         = isset($_GET['pricemin']) ?  $_GET['pricemin'] : $modx->getOption('pricemin',$scriptProperties,$modx->getOption('cybershop.catalog_pricemin'));
-$params['pricemax']         = isset($_GET['pricemax']) ?  $_GET['pricemax'] : $modx->getOption('pricemax',$scriptProperties,$modx->getOption('cybershop.catalog_pricemax'));
-$params['limit']            = isset($_GET['limit']) ?  $_GET['limit'] : $modx->getOption('limit',$scriptProperties,$modx->getOption('cybershop.catalog_limit'));
-$params['offset']           = isset($_GET['page']) ?  ($_GET['page'] - 1) * $params['limit'] : (isset($_GET['offset']) ?  $_GET['offset']: $modx->getOption('offset', $scriptProperties, 0));
-$params['sortname']         = isset($_GET['sortname']) ?  $_GET['sortname'] : $modx->getOption('sortname',$scriptProperties,$modx->getOption('cybershop.catalog_sortname'));
-$params['sortdirection']    = isset($_GET['sortdirection']) ?  $_GET['sortdirection'] : $modx->getOption('sortdirection',$scriptProperties,$modx->getOption('cybershop.catalog_sortdirection'));
-$params['options']          = isset($_GET['options']) ?  $_GET['options'] : $modx->getOption('options', $scriptProperties, '');
+
+$params['categorysgroup']   = filter_input(INPUT_GET, 'categorysgroup') ?  $cs->getIdFromURL(filter_input(INPUT_GET, 'categorysgroup'), 'csCategory') : 0;
+$params['brands']           = filter_input(INPUT_GET, 'brands') ?  explode(",",filter_input(INPUT_GET, 'brands')) : array();
+$params['filters']          = filter_input(INPUT_GET, 'filters') ?  explode(",",filter_input(INPUT_GET, 'filters')) : array();
+$params['values']           = filter_input(INPUT_GET, 'values') ?  explode(",",filter_input(INPUT_GET, 'value')) : array();
+$params['navdata-values']   = filter_input(INPUT_GET, 'navdata-values') ?  explode(",",filter_input(INPUT_GET, 'navdata-values')) : array();
+$params['properties']       = filter_input(INPUT_GET, 'properties') ?  explode(",",filter_input(INPUT_GET, 'properties')) : array();
+$params['tpl_element']      = filter_input(INPUT_GET, 'tpl') ?  filter_input(INPUT_GET, 'tpl') : 'cs_tpl_catalog_row_gallery';
+
+$params['limit']            = filter_input(INPUT_GET, 'limit') ?  filter_input(INPUT_GET, 'limit') : $modx->getOption('limit',$scriptProperties,$modx->getOption('cybershop.catalog_limit'));
+$params['offset']           = filter_input(INPUT_GET, 'page') ?  (filter_input(INPUT_GET, 'page') - 1) * $params['limit'] : (filter_input(INPUT_GET, 'offset') ?  filter_input(INPUT_GET, 'offset') : $modx->getOption('offset', $scriptProperties, 0));
+$params['sortname']         = filter_input(INPUT_GET, 'sortname') ?  filter_input(INPUT_GET, 'sortname') : $modx->getOption('sortname',$scriptProperties,$modx->getOption('cybershop.catalog_sortname'));
+$params['sortdirection']    = filter_input(INPUT_GET, 'sortdirection') ?  filter_input(INPUT_GET, 'sortdirection') : $modx->getOption('sortdirection',$scriptProperties,$modx->getOption('cybershop.catalog_sortdirection'));
+$params['options']          = filter_input(INPUT_GET, 'options') ?  filter_input(INPUT_GET, 'options') : $modx->getOption('options', $scriptProperties, '');
 $params['total']            = 0;
 
 
@@ -98,12 +106,29 @@ $category = $modx->getObject('csCategory', $params['categorysgroup']);
 if (is_object($category)) {
     $elementArray['category_name'] = $category->get('name');
 }
-if ($params['use_pagination']){
-    $params['total'] = $result['total'];
-    $page_nav = $cs->catalog->get_pagination(@$params);
-    $params['page_nav'] = $cs->catalog->parse_pagination($page_nav, @$params);
-    $modx->setPlaceholders($params, $params['namespace']);
+
+$params['total'] = $result['total'];
+$page_nav = $cs->catalog->get_pagination(@$params);
+$elementArray['page_nav'] = $cs->catalog->parse_pagination($page_nav, @$params);
+
+$view_data = array (
+    0 => array ('title' => '', 'glyphicon' => ''),
+    1 => array ('title' => '', 'glyphicon' => '')
+    );
+$view_rows = '';
+foreach ($params['tpl_elements'] as $key => $value) {
+    $view_rows = $modx->getChunk($params['tpl_view_element'], array(
+        'tpl_view-active' => $value == $params['tpl_element'] ? 'active' : '',
+        'tpl_view_data' => $view_data[$key]['title'],
+        'tpl_view_title' => $view_data[$key]['glyphicon']));
 }
 
+
 $modx->setPlaceholders($elementArray, $params['namespace']);
-return $cs->getChunk($params['tpl_catalog_main'],$elementArray);
+
+if ($params['tpl_catalog_main'] == '') {
+    $output = $elementArray['rows_result'];
+} else {
+    $output = $cs->getChunk($params['tpl_catalog_main'],$elementArray);
+}
+return $output;

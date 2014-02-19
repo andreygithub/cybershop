@@ -14,7 +14,7 @@
 </div>
 <input type="hidden" value="[[+categorysgroup]]" id="categorysgroup" />
 <input type="hidden" value="" id="categorysInput" />
-<input type="hidden" value="" id="brendsInput" />
+<input type="hidden" value="" id="brandsInput" />
 <input type="hidden" value="" id="filtersInput" />
 <input type="hidden" value="[[+cs_min_slider-range]]" id="cs_min_range" />
 <input type="hidden" value="[[+cs_max_slider-range]]" id="cs_max_range" />

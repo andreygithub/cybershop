@@ -142,11 +142,11 @@ function loadPlacesCatalog() {
 		}
 		)
 			
-	var brends = new Array();
+	var brands = new Array();
 	$('[name="brend"]:checked').each(
 		function()
 		{
-			brends.push($(this).val());
+			brands.push($(this).val());
 		}
 		)		
 		
@@ -160,13 +160,13 @@ function loadPlacesCatalog() {
 			
 	var pageId = 1;
 	var filter_string = filters.join(',');
-	var brends_string = brends.join(',');
+	var brands_string = brands.join(',');
 	var types_string = types.join(',');
 	//alert(filter_string);
 	//alert( $('#filtersInput').val());
-	if(filter_string != $('#filtersInput').val() || brends_string != $('#brendsInput').val() || types_string != $('#typesInput').val()){
+	if(filter_string != $('#filtersInput').val() || brands_string != $('#brandsInput').val() || types_string != $('#typesInput').val()){
 		$('#filtersInput').val(filter_string);
-		$('#brendsInput').val(brends_string);
+		$('#brandsInput').val(brands_string);
 		$('#typesInput').val(types_string);
 		pageId = 1;
 	}
@@ -202,7 +202,7 @@ function loadPlacesCatalog() {
 				itemsPerPage: itemsPerPage,
 				pageId: pageId,
 				filters: filter_string,
-				brends: brends_string,
+				brands: brands_string,
 				types: types_string,
 				searchval: searchval
 			},

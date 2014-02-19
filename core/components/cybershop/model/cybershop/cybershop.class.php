@@ -46,7 +46,6 @@ class Cybershop {
             'processorsPath' => $corePath . 'processors/',
             'templatesPath' => $corePath . 'elements/templates/',
             'chunksPath' => $corePath . 'elements/chunks/',
-            'customPath' => $corePath . 'custom/',
             'catalog_import_path' => $catalog_import_path,
             'catalog_image_path' => $catalog_image_path,
             'catalog_media_path' => $catalog_media_path,
@@ -101,7 +100,7 @@ class Cybershop {
                         $this->modx->regClientCSS(str_replace($config['pl'], $config['vl'], $css));
                     }
  //                   if ($js = $this->modx->getOption('cybershop.frontend_js', null, $this->config['jsUrl'] . 'web/cybershop.shop.js')) {
-                        $this->modx->regClientStartupScript(str_replace('					', '', '
+                        $this->modx->regClientStartupScript(str_replace('                            ', '', '
                             <script type="text/javascript">
                             cybershopConfig = {
                                     cssUrl: "' . $this->config['cssUrl'] . 'web/"

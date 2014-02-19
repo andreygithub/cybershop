@@ -347,9 +347,12 @@ class CybershopCatalog {
                 $sql_where_string .= " AND {$sql_class_name}.id IN ({$sql_filter}) ";
             }
 
-            $sql_where_string .= " AND {$sql_class_name}.price1 >= {$params['pricemin']} 
-                             AND {$sql_class_name}.price1 <= {$params['pricemax']} ";
-
+           if ((!empty($params['values'])) && ($params['values'] != 'undefined')) {
+                foreach ($params['values'] as $value) {
+                    $sql_where_string .= " AND {$sql_class_name}.{$value}"; 
+                }
+           }
+            
             $sql_from_string = "{$this->modx->getTableName($sql_class_name)} AS {$sql_class_name} 
                 WHERE ($sql_where_string) ";
 
@@ -363,26 +366,20 @@ class CybershopCatalog {
                 unset($result);
             }
 
-            $sql = "SELECT MIN(price1) FROM {$sql_from_string}";
-            $result = $this->modx->query($sql);
-            if (!is_object($result)) {
-                $nav_data['cs_min_slider-range'] = '';
-            } else {
-                $total = $result->fetch(PDO::FETCH_ASSOC);
-                $nav_data['cs_min_slider-range'] = $total['MIN(price1)'];
-                unset($result);
+            if ((!empty($params['navdata-values'])) && ($params['navdata-values'] != 'undefined')) {
+                foreach ($params['navdata-values'] as $value) {
+                    $sql = "SELECT $value FROM {$sql_from_string}";
+                    $result = $this->modx->query($sql);
+                    if (!is_object($result)) {
+                        $nav_data["{$value}"] = '';
+                    } else {
+                        $total = $result->fetch(PDO::FETCH_ASSOC);
+                        $nav_data["{$value}"] = $total[$value];
+                        unset($result);
+                    }                    
+                }
             }
-
-            $sql = "SELECT MAX(price1) FROM {$sql_from_string}";
-            $result = $this->modx->query($sql);
-            if (!is_object($result)) {
-                $nav_data['cs_max_slider-range'] = '';
-            } else {
-                $total = $result->fetch(PDO::FETCH_ASSOC);
-                $nav_data['cs_max_slider-range'] = $total['MAX(price1)'];
-                unset($result);
-            }
-
+            
             $sql_from_string .= "ORDER BY {$params['sortname']} {$params['sortdirection']} 
                 LIMIT {$params['offset']}, {$params['limit']}";
 
